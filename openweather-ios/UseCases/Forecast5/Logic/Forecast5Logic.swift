@@ -23,6 +23,43 @@ final class Forecast5Logic: Forecast5DataSource {
     }
 }
 
+extension Forecast5Logic {
+    
+    func activate() {
+        
+        view.showActivityIndicator()
+        forecastService.getForecasts(city: .defaultCity) {
+            [weak self] result in
+            
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let forecastResponse):
+                self.handle(successWith: forecastResponse)
+            case .failure(let error):
+                self.handle(error)
+            }
+            self.view.hideActivityIndicator()
+        }
+    }
+}
+
+// MARK: - Forecast5ViewOutput
 extension Forecast5Logic: Forecast5ViewOutput {
 
+}
+
+// NARK: - Private Mathods
+private extension Forecast5Logic {
+    func handle(successWith forecastResponse: ForecastResponse) {
+        print("!!! \(type(of: self)).\(#function): forecastResponse: \(forecastResponse)")
+    }
+    
+    func handle(_ error: ApiError) {
+        print("!!! \(type(of: self)).\(#function): ERROR: \(error)")
+    }
+}
+
+private extension String {
+    static let defaultCity = "Munich"
 }

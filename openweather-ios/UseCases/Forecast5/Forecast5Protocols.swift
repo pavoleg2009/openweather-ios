@@ -9,11 +9,13 @@
 import Foundation
 
 protocol Forecast5ViewInput: AnyObject {
-    
+    func showActivityIndicator()
+    func hideActivityIndicator()
+    func showError(errorDescription: String)
 }
 
 protocol Forecast5ViewOutput: AnyObject {
-    
+    func activate()
 }
 
 protocol Forecast5DataSource: AnyObject {

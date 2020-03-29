@@ -21,6 +21,6 @@ final class Forecast5Module {
         
         viewController.logic = logic
         logic.view = viewController
-        
+        logic.activate()
     }
 }

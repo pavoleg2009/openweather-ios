@@ -22,8 +22,20 @@ final class Forecast5ViewController: UIViewController {
     }
 }
 
+// Forecast5ViewInput
 extension Forecast5ViewController: Forecast5ViewInput {
     
+    func showActivityIndicator() {
+        print("!!! \(type(of: self)).\(#function): Show activity indicator here")
+    }
+    
+    func hideActivityIndicator() {
+        print("!!! \(type(of: self)).\(#function): Hide activity indicator here")
+    }
+    
+    func showError(errorDescription: String) {
+        print("!!! \(type(of: self)).\(#function): Error: \(errorDescription)")
+    }
 }
 
 private extension String {

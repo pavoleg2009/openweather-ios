@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias RequestResult<Res> = Result<Res, Error>
+typealias RequestResult<Res> = Result<Res, ApiError>
 typealias RequestCompletion<Res> = (RequestResult<Res>) -> Void
 
 /// Conformers of this protocol responsible for making network requests
