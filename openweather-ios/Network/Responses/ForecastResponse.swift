@@ -1,5 +1,5 @@
 //
-//  Forecast5Response.swift
+//  ForecastResponse.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 24.03.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Forecast5Response {
+struct ForecastResponse {
     
     let code: String?
     let message: Int?
@@ -17,7 +17,7 @@ struct Forecast5Response {
     let city: City?
 }
 
-extension Forecast5Response: Codable {
+extension ForecastResponse: Codable {
     
     enum CodingKeys: String, CodingKey {
         case code = "cod"

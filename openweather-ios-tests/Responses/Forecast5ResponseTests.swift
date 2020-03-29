@@ -1,6 +1,6 @@
 //
-//  test_Forecast5Response.swift
-//  openweather-ios-tests
+//  Forecast5ResponseTests.swift
+//  Forecast5ResponseTests
 //
 //  Created by Oleg Pavlichenkov on 24.03.2020.
 //  Copyright © 2020 just eng. All rights reserved.
@@ -11,7 +11,7 @@ import Foundation
 
 @testable import openweather_ios
 // swiftlint:disable all
-class test_Forecast5Response: XCTestCase {
+final class ForecastResponseTests: XCTestCase {
     
     let session = URLSession.shared
     
@@ -35,7 +35,7 @@ class test_Forecast5Response: XCTestCase {
             coder.dateDecodingStrategy = .secondsSince1970
             
             do {
-                let response = try coder.decode(Forecast5Response.self, from: data!)
+                let response = try coder.decode(ForecastResponse.self, from: data!)
                 print(response.items!.first!)
                 expectation.fulfill()
             } catch {
