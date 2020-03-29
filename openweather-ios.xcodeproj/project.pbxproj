@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C06CB74242A791000DCA7FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CB73242A791000DCA7FB /* AppDelegate.swift */; };
-		7C06CB78242A791000DCA7FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CB77242A791000DCA7FB /* ViewController.swift */; };
-		7C06CB7B242A791000DCA7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C06CB79242A791000DCA7FB /* Main.storyboard */; };
 		7C06CB7D242A791200DCA7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C06CB7C242A791200DCA7FB /* Assets.xcassets */; };
 		7C06CB80242A791200DCA7FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C06CB7E242A791200DCA7FB /* LaunchScreen.storyboard */; };
 		7C06CB89242A7B3500DCA7FB /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C06CB88242A7B3500DCA7FB /* AppConfigurator.swift */; };
@@ -33,6 +31,11 @@
 		7CA266742430F04A00E45A01 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266732430F04A00E45A01 /* URLSessionMock.swift */; };
 		7CA266762430F08500E45A01 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */; };
 		7CA266792431070C00E45A01 /* ForecastServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266782431070C00E45A01 /* ForecastServicesTests.swift */; };
+		7CA2667D24311EEA00E45A01 /* Forecast5Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */; };
+		7CA2667F24311FAD00E45A01 /* Forecast5Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */; };
+		7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266802431207E00E45A01 /* Forecast5ViewController.swift */; };
+		7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA266812431207E00E45A01 /* Forecast5ViewController.xib */; };
+		7CA266852431209600E45A01 /* Forecast5Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266842431209600E45A01 /* Forecast5Logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +51,6 @@
 /* Begin PBXFileReference section */
 		7C06CB70242A791000DCA7FB /* openweather-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openweather-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C06CB73242A791000DCA7FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C06CB77242A791000DCA7FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7C06CB7A242A791000DCA7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C06CB7C242A791200DCA7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C06CB7F242A791200DCA7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C06CB81242A791200DCA7FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +78,11 @@
 		7CA266732430F04A00E45A01 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		7CA266782431070C00E45A01 /* ForecastServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServicesTests.swift; sourceTree = "<group>"; };
+		7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Protocols.swift; sourceTree = "<group>"; };
+		7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Module.swift; sourceTree = "<group>"; };
+		7CA266802431207E00E45A01 /* Forecast5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5ViewController.swift; sourceTree = "<group>"; };
+		7CA266812431207E00E45A01 /* Forecast5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Forecast5ViewController.xib; sourceTree = "<group>"; };
+		7CA266842431209600E45A01 /* Forecast5Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Logic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,7 @@
 				7C06CB87242A7B1900DCA7FB /* App */,
 				7C06CB8D242A801600DCA7FB /* Network */,
 				7C06CB8A242A7B6A00DCA7FB /* Resources */,
-				7C06CB8C242A7EDB00DCA7FB /* Remove */,
+				7CA2667A243110B700E45A01 /* UseCases */,
 				7C06CB8B242A7C2E00DCA7FB /* README.md */,
 			);
 			path = "openweather-ios";
@@ -144,15 +150,6 @@
 				7C06CB7E242A791200DCA7FB /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7C06CB8C242A7EDB00DCA7FB /* Remove */ = {
-			isa = PBXGroup;
-			children = (
-				7C06CB77242A791000DCA7FB /* ViewController.swift */,
-				7C06CB79242A791000DCA7FB /* Main.storyboard */,
-			);
-			path = Remove;
 			sourceTree = "<group>";
 		};
 		7C06CB8D242A801600DCA7FB /* Network */ = {
@@ -246,6 +243,42 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		7CA2667A243110B700E45A01 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				7CA2667B243110CF00E45A01 /* Forecast5 */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7CA2667B243110CF00E45A01 /* Forecast5 */ = {
+			isa = PBXGroup;
+			children = (
+				7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */,
+				7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */,
+				7CA26686243121D700E45A01 /* View */,
+				7CA26687243121E000E45A01 /* Logic */,
+			);
+			path = Forecast5;
+			sourceTree = "<group>";
+		};
+		7CA26686243121D700E45A01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CA266802431207E00E45A01 /* Forecast5ViewController.swift */,
+				7CA266812431207E00E45A01 /* Forecast5ViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7CA26687243121E000E45A01 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7CA266842431209600E45A01 /* Forecast5Logic.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,8 +362,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C06CB80242A791200DCA7FB /* LaunchScreen.storyboard in Resources */,
+				7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */,
 				7C06CB7D242A791200DCA7FB /* Assets.xcassets in Resources */,
-				7C06CB7B242A791000DCA7FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,8 +402,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA2667F24311FAD00E45A01 /* Forecast5Module.swift in Sources */,
+				7CA2667D24311EEA00E45A01 /* Forecast5Protocols.swift in Sources */,
 				7C52EB792430D5280064731F /* ApiError.swift in Sources */,
-				7C06CB78242A791000DCA7FB /* ViewController.swift in Sources */,
+				7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */,
 				7C06CBA0242A81E100DCA7FB /* ForecastServiceDefault.swift in Sources */,
 				7C06CBAB242A9E2400DCA7FB /* ForecastMain.swift in Sources */,
 				7C06CB74242A791000DCA7FB /* AppDelegate.swift in Sources */,
@@ -384,6 +419,7 @@
 				7C06CB89242A7B3500DCA7FB /* AppConfigurator.swift in Sources */,
 				7C8AFBC9242BE2CF00D786D3 /* ForecastRequest.swift in Sources */,
 				7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */,
+				7CA266852431209600E45A01 /* Forecast5Logic.swift in Sources */,
 				7C06CBA5242A85EF00DCA7FB /* City.swift in Sources */,
 				7C438E222430D5EE008D9D42 /* RequestManagerDefault.swift in Sources */,
 			);
@@ -413,14 +449,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7C06CB79242A791000DCA7FB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C06CB7A242A791000DCA7FB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7C06CB7E242A791200DCA7FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -561,7 +589,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -580,7 +608,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
