@@ -13,8 +13,7 @@ final class JsonReader {
     
     func read<T: Decodable>(from fileName: String) throws -> T {
         
-        let bundle = Bundle(for: JsonReader.self)
-        guard let fileUrl = bundle.url(forResource: fileName, withExtension: "json"),
+        guard let fileUrl = Bundle.main.url(forResource: fileName, withExtension: "json"),
             case let data = try Data(contentsOf: fileUrl),
             case let decoder = RequestManagerDefault.defaultDecoder,
             case let result = try decoder.decode(T.self, from: data)

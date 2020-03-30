@@ -8,26 +8,63 @@
 
 import Foundation
 
-final class Forecast5Logic: Forecast5DataSource {
+typealias VoidClosure = () -> Void
+
+final class Forecast5Logic {
     
     weak var view: Forecast5ViewInput!
     
     // MARK: Forecast5DataSource
+    var dayForecasts: [DayForecastDiaplayData] = []
+    var cityName: String?
     
     // MARK: Private Properties
-    private var forecastService: ForecastService
+    private var forecastServiceAdapters: [ForecastServiceAdapter]
+    private var selectedDatasourceIndex = 0
+    private var forecastService: ForecastService {
+        forecastServiceAdapters[selectedDatasourceIndex]
+    }
     
     // MARK: Life Cycle
-    init(forecastService: ForecastService) {
-        self.forecastService = forecastService
+    init(builderType: ForecastServiceListBuilder.Type = ForecastServiceListBuilderDefault.self) {
+        
+        self.forecastServiceAdapters = builderType.makeForecastServices()
     }
 }
 
-extension Forecast5Logic {
+// Forecast5DataSource
+extension Forecast5Logic: Forecast5DataSource {
+    var datasourceTitles: [String] {
+        forecastServiceAdapters.map { $0.title }
+    }
+
+    func selectDataSource(index: Int) {
+        
+        selectedDatasourceIndex = index
+        view.showActivityIndicator()
+        loadData {
+            self.view.hideActivityIndicator()
+        }
+    }
+}
+
+// MARK: - Forecast5ViewOutput
+extension Forecast5Logic: Forecast5ViewOutput {
     
     func activate() {
-        
+        // view not loaded yet: VC not in the View Hierarchy
+        view.configure()
         view.showActivityIndicator()
+        loadData {
+            self.view.hideActivityIndicator()
+        }
+    }
+}
+
+// NARK: - Private Mathods
+private extension Forecast5Logic {
+    
+    func loadData(completion: VoidClosure?) {
         forecastService.getForecasts(city: .defaultCity) {
             [weak self] result in
             
@@ -39,20 +76,19 @@ extension Forecast5Logic {
             case .failure(let error):
                 self.handle(error)
             }
-            self.view.hideActivityIndicator()
         }
     }
-}
-
-// MARK: - Forecast5ViewOutput
-extension Forecast5Logic: Forecast5ViewOutput {
-
-}
-
-// NARK: - Private Mathods
-private extension Forecast5Logic {
+    
     func handle(successWith forecastResponse: ForecastResponse) {
-        print("!!! \(type(of: self)).\(#function): forecastResponse: \(forecastResponse)")
+        
+        guard let forecasts = forecastResponse.items,
+            !forecasts.isEmpty
+            else { return }
+        
+        dayForecasts = Forecast5DisplayDataBuilder().make(from: forecasts)
+        cityName = forecastResponse.city?.name
+        // TODO: Update city title
+        view.update()
     }
     
     func handle(_ error: ApiError) {

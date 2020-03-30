@@ -16,8 +16,7 @@ final class Forecast5Module {
         let viewController = Forecast5ViewController(nibName: "Forecast5ViewController", bundle: nil)
         self.viewController = viewController
         
-        let forecastService = ForecastServiceDefault()
-        let logic = Forecast5Logic(forecastService: forecastService)
+        let logic = Forecast5Logic()
         
         viewController.logic = logic
         logic.view = viewController

@@ -25,7 +25,6 @@ extension ForecastServiceJson: ForecastService {
     func getForecasts(city: String,
                       completion: RequestCompletion<ForecastRequest.ResponseType>?
     ) {
-        
         do {
             let response: ForecastResponse = try read(from: filename)
             completion?(.success(response))
@@ -51,5 +50,5 @@ private extension ForecastServiceJson {
 }
 
 private extension String {
-    static let defaultFileName = "munich_2020_03_30_17_35"
+    static let defaultFileName = "kazan_2020_03_31_00_45"
 }

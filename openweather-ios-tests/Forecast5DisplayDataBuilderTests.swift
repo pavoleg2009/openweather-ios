@@ -22,11 +22,11 @@ class Forecast5DisplayDataBuilderTests: XCTestCase {
         let dayForecasts = Forecast5DisplayDataBuilder().make(from: items)
         
         // THEN
-        // in each response we are waitng for forecasts of 5-6 days
-        // when you request after 9PM (GMT), you got 5 full day forecatst by 8 items
-        // starting with forecast for 12AM for the next day => 40 items total
-        // if you request earlier, you'll have _x_ < 8 items for current date,
-        // 8 for each other day and 8 - x for the last day.
+        // In each response we are waitng for forecasts for 5-6 days.
+        // When we do request after 9PM (GMT), we get 5 full day forecasts
+        // by 8 items each starting with forecast for 12AM for the next day => 40 items total
+        // If we do request earlier, we'll have x (< 8) items for current date,
+        // then 8 for each other day and 8 - x for the last day.
         XCTAssert(5...6 ~= dayForecasts.count)
         
         // we have 2 items in munich_2020_03_30_17_35.json for 30.03

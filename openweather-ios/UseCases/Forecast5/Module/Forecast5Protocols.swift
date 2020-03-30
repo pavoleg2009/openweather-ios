@@ -9,6 +9,8 @@
 import Foundation
 
 protocol Forecast5ViewInput: AnyObject {
+    
+    func configure()
     func showActivityIndicator()
     func hideActivityIndicator()
     func showError(errorDescription: String)
@@ -21,8 +23,9 @@ protocol Forecast5ViewOutput: AnyObject {
 }
 
 protocol Forecast5DataSource: AnyObject {
-//    var datasourceTitles: [String] { get }
+    var datasourceTitles: [String] { get }
+    var cityName: String? { get }
 //    var dayForecasts: [DayForecastDiaplayData] { get }
     
-//    func selectDataSource(index: Int)
+    func selectDataSource(index: Int)
 }

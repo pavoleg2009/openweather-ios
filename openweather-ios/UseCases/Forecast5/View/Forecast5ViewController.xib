@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Forecast5ViewController" customModule="openweather_ios" customModuleProvider="target">
             <connections>
+                <outlet property="sourcesSegmetedConrol" destination="4Ra-yH-S0m" id="UiP-4c-q07"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,15 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forecast5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43U-NX-C4C">
-                    <rect key="frame" x="169" y="438" width="77" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Ra-yH-S0m">
+                    <rect key="frame" x="0.0" y="44" width="414" height="32"/>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                    </segments>
+                    <connections>
+                        <action selector="sourceIndexDidChange:" destination="-1" eventType="valueChanged" id="ata-Je-wn5"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="4Ra-yH-S0m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CmB-Ud-jxS"/>
+                <constraint firstItem="4Ra-yH-S0m" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VXx-lQ-KK2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Ra-yH-S0m" secondAttribute="trailing" id="czE-3K-wPU"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="135"/>
         </view>

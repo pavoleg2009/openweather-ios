@@ -8,14 +8,18 @@
 
 import Foundation
 
-enum ForecastServiceListBuilder {
+protocol ForecastServiceListBuilder {
+    static func makeForecastServices() -> [ForecastServiceAdapter]
+}
+
+enum ForecastServiceListBuilderDefault: ForecastServiceListBuilder {
     
     static func makeForecastServices() -> [ForecastServiceAdapter] {
         return [
             ForecastServiceAdapter(title: .online,
                                    service: ForecastServiceDefault()),
             ForecastServiceAdapter(title: .json,
-                                   service: ForecastServiceDefault())
+                                   service: ForecastServiceJson())
         ]
     }
 }
