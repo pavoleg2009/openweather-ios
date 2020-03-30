@@ -12,12 +12,17 @@ protocol Forecast5ViewInput: AnyObject {
     func showActivityIndicator()
     func hideActivityIndicator()
     func showError(errorDescription: String)
+    func update()
 }
 
 protocol Forecast5ViewOutput: AnyObject {
     func activate()
+    
 }
 
 protocol Forecast5DataSource: AnyObject {
+//    var datasourceTitles: [String] { get }
+//    var dayForecasts: [DayForecastDiaplayData] { get }
     
+//    func selectDataSource(index: Int)
 }

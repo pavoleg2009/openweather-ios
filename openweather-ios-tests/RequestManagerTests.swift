@@ -61,7 +61,7 @@ final class RequestManagerTests: XCTestCase {
             case .success:
                 XCTFail("Response with empty data should not succeed")
             case .failure(let error):
-                XCTAssertEqual(error as? ApiError, ApiError.noData)
+                XCTAssertEqual(error, ApiError.noData)
             }
             exp.fulfill()
         }

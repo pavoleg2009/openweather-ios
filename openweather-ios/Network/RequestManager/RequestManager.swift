@@ -15,6 +15,8 @@ typealias RequestCompletion<Res> = (RequestResult<Res>) -> Void
 /// They know nothing about specific endpoints
 protocol RequestManager {
     
+    static var defaultDecoder: JSONDecoder { get }
+    
     func fetch<Req: ApiRequest>(
         _ request: Req,
         completion: RequestCompletion<Req.ResponseType>?

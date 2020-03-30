@@ -25,6 +25,12 @@ final class RequestManagerDefault {
 // MARK: RequestManager
 extension RequestManagerDefault: RequestManager {
     
+    static var defaultDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        return decoder
+    }
+    
     func fetch<Req: ApiRequest>(
         _ request: Req,
         completion: RequestCompletion<Req.ResponseType>?

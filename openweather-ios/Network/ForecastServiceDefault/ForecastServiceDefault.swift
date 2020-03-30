@@ -14,13 +14,14 @@ final class ForecastServiceDefault {
     private let requestManager: RequestManager
     
     // MARK: Life Cycle
-    init(requestManager: RequestManager = RequestManagerDefault()) {
+    init(requestManager: RequestManager = RequestManagerDefault()
+    ) {
         self.requestManager = requestManager
     }
 }
 
 extension ForecastServiceDefault: ForecastService {
-    
+
     func getForecasts(city: String,
                       completion: RequestCompletion<ForecastRequest.ResponseType>?
     ) {

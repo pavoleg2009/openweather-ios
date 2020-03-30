@@ -69,9 +69,7 @@ extension ApiRequest {
     
     // default response decoder
     var decorer: JSONDecoder {
-        let decorer = JSONDecoder()
-        decorer.dateDecodingStrategy = .secondsSince1970
-        return decorer
+        return RequestManagerDefault.defaultDecoder
     }
     
     func decodeResponse(data: Data) throws -> ResponseType {

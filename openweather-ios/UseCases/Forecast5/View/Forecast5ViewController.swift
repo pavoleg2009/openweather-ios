@@ -36,6 +36,10 @@ extension Forecast5ViewController: Forecast5ViewInput {
     func showError(errorDescription: String) {
         print("!!! \(type(of: self)).\(#function): Error: \(errorDescription)")
     }
+    
+    func update() {
+        print("!!! \(type(of: self)).\(#function)")
+    }
 }
 
 private extension String {

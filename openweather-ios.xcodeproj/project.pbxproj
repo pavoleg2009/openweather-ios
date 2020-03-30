@@ -30,12 +30,23 @@
 		7CA266712430EF5D00E45A01 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266702430EF5D00E45A01 /* URLSessionProtocol.swift */; };
 		7CA266742430F04A00E45A01 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266732430F04A00E45A01 /* URLSessionMock.swift */; };
 		7CA266762430F08500E45A01 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */; };
-		7CA266792431070C00E45A01 /* ForecastServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266782431070C00E45A01 /* ForecastServicesTests.swift */; };
+		7CA266792431070C00E45A01 /* ForecastServicesDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266782431070C00E45A01 /* ForecastServicesDefaultTests.swift */; };
 		7CA2667D24311EEA00E45A01 /* Forecast5Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */; };
 		7CA2667F24311FAD00E45A01 /* Forecast5Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */; };
 		7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266802431207E00E45A01 /* Forecast5ViewController.swift */; };
 		7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA266812431207E00E45A01 /* Forecast5ViewController.xib */; };
 		7CA266852431209600E45A01 /* Forecast5Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266842431209600E45A01 /* Forecast5Logic.swift */; };
+		7CA266892431313900E45A01 /* DayForecastDiaplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */; };
+		7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */; };
+		7CE02C252431ED56004618F4 /* Forecast5DisplayDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */; };
+		7CE02C272431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C262431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift */; };
+		7CE02C2A2431F1CC004618F4 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C292431F1CC004618F4 /* JsonReader.swift */; };
+		7CE02C2D243202A5004618F4 /* munich_forecast5.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CE02C2C243202A5004618F4 /* munich_forecast5.json */; };
+		7CFA208524326FDC00C526CC /* ForecastServiceListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA208424326FDC00C526CC /* ForecastServiceListBuilder.swift */; };
+		7CFA20882432711700C526CC /* ForecastServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA20872432711700C526CC /* ForecastServiceAdapter.swift */; };
+		7CFA208A2432732000C526CC /* ForecastServiceJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA20892432732000C526CC /* ForecastServiceJson.swift */; };
+		7CFA208E2432768900C526CC /* ForecastServiceJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA208D2432768900C526CC /* ForecastServiceJsonTests.swift */; };
+		7CFA208F2432796E00C526CC /* munich_2020_03_30_17_35.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CE02C2E24323BC7004618F4 /* munich_2020_03_30_17_35.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,12 +88,23 @@
 		7CA266702430EF5D00E45A01 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		7CA266732430F04A00E45A01 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
-		7CA266782431070C00E45A01 /* ForecastServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServicesTests.swift; sourceTree = "<group>"; };
+		7CA266782431070C00E45A01 /* ForecastServicesDefaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServicesDefaultTests.swift; sourceTree = "<group>"; };
 		7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Protocols.swift; sourceTree = "<group>"; };
 		7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Module.swift; sourceTree = "<group>"; };
 		7CA266802431207E00E45A01 /* Forecast5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5ViewController.swift; sourceTree = "<group>"; };
 		7CA266812431207E00E45A01 /* Forecast5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Forecast5ViewController.xib; sourceTree = "<group>"; };
 		7CA266842431209600E45A01 /* Forecast5Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5Logic.swift; sourceTree = "<group>"; };
+		7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastDiaplayData.swift; sourceTree = "<group>"; };
+		7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDisplayData.swift; sourceTree = "<group>"; };
+		7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5DisplayDataBuilder.swift; sourceTree = "<group>"; };
+		7CE02C262431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5DisplayDataBuilderTests.swift; sourceTree = "<group>"; };
+		7CE02C292431F1CC004618F4 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
+		7CE02C2C243202A5004618F4 /* munich_forecast5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = munich_forecast5.json; sourceTree = "<group>"; };
+		7CE02C2E24323BC7004618F4 /* munich_2020_03_30_17_35.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = munich_2020_03_30_17_35.json; sourceTree = "<group>"; };
+		7CFA208424326FDC00C526CC /* ForecastServiceListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServiceListBuilder.swift; sourceTree = "<group>"; };
+		7CFA20872432711700C526CC /* ForecastServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServiceAdapter.swift; sourceTree = "<group>"; };
+		7CFA20892432732000C526CC /* ForecastServiceJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServiceJson.swift; sourceTree = "<group>"; };
+		7CFA208D2432768900C526CC /* ForecastServiceJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastServiceJsonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +170,7 @@
 			children = (
 				7C06CB7C242A791200DCA7FB /* Assets.xcassets */,
 				7C06CB7E242A791200DCA7FB /* LaunchScreen.storyboard */,
+				7CE02C2E24323BC7004618F4 /* munich_2020_03_30_17_35.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -155,12 +178,11 @@
 		7C06CB8D242A801600DCA7FB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7CFA20862432702500C526CC /* ForecastServiceDefault */,
 				7CA2666F2430EF4900E45A01 /* URLSessionProtocol */,
 				7C52EB712430D4230064731F /* RequestManager */,
 				7C8AFBC7242BE2B400D786D3 /* Requests */,
 				7C06CBA1242A84B100DCA7FB /* Responses */,
-				7C06CB9C242A81C400DCA7FB /* ForecastService.swift */,
-				7C06CB9F242A81E100DCA7FB /* ForecastServiceDefault.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -168,12 +190,16 @@
 		7C06CB93242A818100DCA7FB /* openweather-ios-tests */ = {
 			isa = PBXGroup;
 			children = (
+				7CE02C2B2431F70A004618F4 /* Jsons */,
+				7CE02C282431F1AE004618F4 /* Helpers */,
 				7CA266722430F03200E45A01 /* Mocks */,
 				7C52EB702430D2C70064731F /* Requests */,
 				7C438E232430D6A6008D9D42 /* Responses */,
-				7CA266782431070C00E45A01 /* ForecastServicesTests.swift */,
+				7CA266782431070C00E45A01 /* ForecastServicesDefaultTests.swift */,
 				7C06CB94242A818100DCA7FB /* RequestManagerTests.swift */,
+				7CE02C262431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift */,
 				7C06CB96242A818100DCA7FB /* Info.plist */,
+				7CFA208D2432768900C526CC /* ForecastServiceJsonTests.swift */,
 			);
 			path = "openweather-ios-tests";
 			sourceTree = "<group>";
@@ -254,8 +280,8 @@
 		7CA2667B243110CF00E45A01 /* Forecast5 */ = {
 			isa = PBXGroup;
 			children = (
-				7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */,
-				7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */,
+				7CE02C3024326D34004618F4 /* Module */,
+				7CA2668A243132BB00E45A01 /* DisplayData */,
 				7CA26686243121D700E45A01 /* View */,
 				7CA26687243121E000E45A01 /* Logic */,
 			);
@@ -275,8 +301,55 @@
 			isa = PBXGroup;
 			children = (
 				7CA266842431209600E45A01 /* Forecast5Logic.swift */,
+				7CFA208424326FDC00C526CC /* ForecastServiceListBuilder.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		7CA2668A243132BB00E45A01 /* DisplayData */ = {
+			isa = PBXGroup;
+			children = (
+				7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */,
+				7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */,
+				7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */,
+			);
+			path = DisplayData;
+			sourceTree = "<group>";
+		};
+		7CE02C282431F1AE004618F4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7CE02C292431F1CC004618F4 /* JsonReader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7CE02C2B2431F70A004618F4 /* Jsons */ = {
+			isa = PBXGroup;
+			children = (
+				7CE02C2C243202A5004618F4 /* munich_forecast5.json */,
+			);
+			path = Jsons;
+			sourceTree = "<group>";
+		};
+		7CE02C3024326D34004618F4 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7CA2667C24311EEA00E45A01 /* Forecast5Protocols.swift */,
+				7CA2667E24311FAD00E45A01 /* Forecast5Module.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		7CFA20862432702500C526CC /* ForecastServiceDefault */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CB9C242A81C400DCA7FB /* ForecastService.swift */,
+				7CFA20872432711700C526CC /* ForecastServiceAdapter.swift */,
+				7C06CB9F242A81E100DCA7FB /* ForecastServiceDefault.swift */,
+				7CFA20892432732000C526CC /* ForecastServiceJson.swift */,
+			);
+			path = ForecastServiceDefault;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C06CB80242A791200DCA7FB /* LaunchScreen.storyboard in Resources */,
+				7CFA208F2432796E00C526CC /* munich_2020_03_30_17_35.json in Resources */,
 				7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */,
 				7C06CB7D242A791200DCA7FB /* Assets.xcassets in Resources */,
 			);
@@ -371,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE02C2D243202A5004618F4 /* munich_forecast5.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +477,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE02C252431ED56004618F4 /* Forecast5DisplayDataBuilder.swift in Sources */,
 				7CA2667F24311FAD00E45A01 /* Forecast5Module.swift in Sources */,
 				7CA2667D24311EEA00E45A01 /* Forecast5Protocols.swift in Sources */,
 				7C52EB792430D5280064731F /* ApiError.swift in Sources */,
+				7CFA208524326FDC00C526CC /* ForecastServiceListBuilder.swift in Sources */,
+				7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */,
+				7CFA208A2432732000C526CC /* ForecastServiceJson.swift in Sources */,
 				7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */,
+				7CFA20882432711700C526CC /* ForecastServiceAdapter.swift in Sources */,
 				7C06CBA0242A81E100DCA7FB /* ForecastServiceDefault.swift in Sources */,
 				7C06CBAB242A9E2400DCA7FB /* ForecastMain.swift in Sources */,
 				7C06CB74242A791000DCA7FB /* AppDelegate.swift in Sources */,
@@ -417,6 +497,7 @@
 				7CA266712430EF5D00E45A01 /* URLSessionProtocol.swift in Sources */,
 				7C06CB9D242A81C400DCA7FB /* ForecastService.swift in Sources */,
 				7C06CB89242A7B3500DCA7FB /* AppConfigurator.swift in Sources */,
+				7CA266892431313900E45A01 /* DayForecastDiaplayData.swift in Sources */,
 				7C8AFBC9242BE2CF00D786D3 /* ForecastRequest.swift in Sources */,
 				7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */,
 				7CA266852431209600E45A01 /* Forecast5Logic.swift in Sources */,
@@ -429,9 +510,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE02C2A2431F1CC004618F4 /* JsonReader.swift in Sources */,
 				7CA266742430F04A00E45A01 /* URLSessionMock.swift in Sources */,
+				7CE02C272431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift in Sources */,
+				7CFA208E2432768900C526CC /* ForecastServiceJsonTests.swift in Sources */,
 				7C8AFBC4242BE0E200D786D3 /* ForecastRequestTests.swift in Sources */,
-				7CA266792431070C00E45A01 /* ForecastServicesTests.swift in Sources */,
+				7CA266792431070C00E45A01 /* ForecastServicesDefaultTests.swift in Sources */,
 				7C06CB95242A818100DCA7FB /* RequestManagerTests.swift in Sources */,
 				7C06CBA9242A889000DCA7FB /* Forecast5ResponseTests.swift in Sources */,
 				7CA266762430F08500E45A01 /* URLSessionDataTaskMock.swift in Sources */,

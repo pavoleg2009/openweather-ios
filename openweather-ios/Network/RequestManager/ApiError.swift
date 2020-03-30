@@ -15,6 +15,7 @@ enum ApiError: Error {
     case serverSide(Data?)
     case noData
     case responseDecoding(Error)
+    case fileRead(Error)
 }
 
 extension ApiError: Equatable {

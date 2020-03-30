@@ -31,8 +31,7 @@ final class ForecastResponseTests: XCTestCase {
         let expectation = XCTestExpectation(description: "wait for request completion")
         let task = session.dataTask(with: url) { (data, response, error) in
             
-            let coder = JSONDecoder()
-            coder.dateDecodingStrategy = .secondsSince1970
+            let coder = RequestManagerDefault.defaultDecoder
             
             do {
                 let response = try coder.decode(ForecastResponse.self, from: data!)
