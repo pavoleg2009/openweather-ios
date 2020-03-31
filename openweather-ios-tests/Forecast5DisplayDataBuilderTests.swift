@@ -9,7 +9,7 @@
 import XCTest
 @testable import openweather_ios
 
-class Forecast5DisplayDataBuilderTests: XCTestCase {
+final class Forecast5DisplayDataBuilderTests: XCTestCase {
 
     func test_Forecast5DisplayDataBuilder_shouldMakeItemsFor5days() throws {
         // GIVEN
@@ -35,5 +35,4 @@ class Forecast5DisplayDataBuilderTests: XCTestCase {
         XCTAssertEqual(dayForecasts[4].forecastItems.count, 8)
         XCTAssertEqual(dayForecasts[5].forecastItems.count, 8 - 3)
     }
-
 }

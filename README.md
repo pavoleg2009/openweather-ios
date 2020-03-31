@@ -13,6 +13,7 @@ of the iOS, so 11.4 is selected;
 - Some formatting (for ex.: closing braces of func and return type on the next line) is just a personal experiment;
 - Some prints and comments left as stubs;
 - API credential stored in open form
+- Some tests make real request to API, not ok got production
 
 ##  Test Task Description
 

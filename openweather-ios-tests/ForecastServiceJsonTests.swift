@@ -9,9 +9,9 @@
 import XCTest
 @testable import openweather_ios
 
-class ForecastServiceJsonTests: XCTestCase {
+final class ForecastServiceJsonTests: XCTestCase {
 
-    func testExample() throws {
+    func test_getForecastFromLocalJson_shouldReturn40Items() throws {
         
         // GIVEN
         let sut: ForecastService = ForecastServiceJson()
@@ -24,10 +24,7 @@ class ForecastServiceJsonTests: XCTestCase {
             // THEN
             switch result {
             case .success(let forecastResponse):
-                XCTAssertEqual(
-                    forecastResponse.items?.count,
-                    expectedItemsCount
-                )
+                XCTAssertEqual(forecastResponse.items?.count, expectedItemsCount)
             case .failure:
                 XCTFail("Success expected")
             }

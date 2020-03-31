@@ -11,16 +11,6 @@ import XCTest
 
 // swiftlint:disable all
 final class RequestManagerTests: XCTestCase {
-    
-//    var sut: RequestManager!
-//
-//    override func setUp() {
-//        sut = RequestManagerDefault()
-//    }
-//
-//    override func tearDown() {
-//        sut = nil
-//    }
 
     func test_reuqestManager_shoultCallCompletionWithResult() {
         
@@ -30,11 +20,11 @@ final class RequestManagerTests: XCTestCase {
         let request = ForecastRequest(city: "Munich")
         
         // WHEN
-        
         sut.fetch(request) { result in
+            
+            // THEN
             switch result {
             case .success(let response):
-                print("!!! SUCCESS:", response)
                 XCTAssertEqual(response.city?.name, "Munich")
             case .failure(let error):
                 XCTFail("Should not fail: \(error)")
@@ -42,7 +32,6 @@ final class RequestManagerTests: XCTestCase {
             exp.fulfill()
         }
         
-        // THEN
         wait(for: [exp], timeout: 2)
     }
     
@@ -55,8 +44,9 @@ final class RequestManagerTests: XCTestCase {
         let request = ForecastRequest(city: "Munich")
         
         // WHEN
-        
         sut.fetch(request) { result in
+            
+            // THEN
             switch result {
             case .success:
                 XCTFail("Response with empty data should not succeed")
@@ -66,7 +56,6 @@ final class RequestManagerTests: XCTestCase {
             exp.fulfill()
         }
         
-        // THEN
         wait(for: [exp], timeout: 2)
     }
 

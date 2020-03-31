@@ -21,12 +21,7 @@ final class URLSessionMock: URLSessionProtocol {
         dataTaskMock = URLSessionDataTaskMock()
         dataTaskMock.taskResponse = (data, response, error)
     }
-    
-//    public convenience init?(jsonDict: [String: Any], response: URLResponse? = nil, error: Error? = nil) {
-//        guard let data = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else { return nil }
-//        self.init(data: data, response: response, error: error)
-//    }
-    
+
     // MARK: Instance methods
     func dataTask(with request: URLRequest,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
@@ -35,12 +30,4 @@ final class URLSessionMock: URLSessionProtocol {
         self.dataTaskMock.completionHandler = completionHandler
         return self.dataTaskMock
     }
-    
-//    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-//
-//        self.url = url
-//        self.dataTaskMock.completionHandler = completionHandler
-//        return self.dataTaskMock
-//    }
-    
 }
