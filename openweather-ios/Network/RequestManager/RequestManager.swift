@@ -17,8 +17,6 @@ protocol RequestManager {
     
     static var defaultDecoder: JSONDecoder { get }
     
-    func fetch<Req: ApiRequest>(
-        _ request: Req,
-        completion: RequestCompletion<Req.ResponseType>?
-    )
+    func fetch<Req: ApiRequest>(_ request: Req,
+                                completion: RequestCompletion<Req.ResponseType>?)
 }

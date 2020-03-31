@@ -8,10 +8,11 @@
 
 import UIKit
 
+/// Configures initial app state
 enum AppConfigurator {
     
-    static func configure(for window: UIWindow) {
-        
+    static func configure(for window: UIWindow
+    ) {
         let navigationControler = UINavigationController()
 
         let forecast5Module = Forecast5Module()

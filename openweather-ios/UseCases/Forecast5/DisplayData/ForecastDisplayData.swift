@@ -11,10 +11,10 @@ import UIKit
 struct ForecastDisplayData {
     
     let temperature: String
+    let feelsLike: String
     let description: String
     let time: String
     let day: String
     let date: String
     let icon: UIImage
-    
 }

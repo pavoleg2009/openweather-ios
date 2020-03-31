@@ -12,12 +12,11 @@ import Foundation
 final class RequestManagerDefault {
     
     // MARK: Private Properties
-    
     private let urlSession: URLSessionProtocol
     
     // MARK: Life Cycle
-    
-    init(urlSession: URLSessionProtocol = URLSession(configuration: .default)) {
+    init(urlSession: URLSessionProtocol = URLSession(configuration: .default)
+    ) {
         self.urlSession = urlSession
     }
 }
@@ -31,9 +30,8 @@ extension RequestManagerDefault: RequestManager {
         return decoder
     }
     
-    func fetch<Req: ApiRequest>(
-        _ request: Req,
-        completion: RequestCompletion<Req.ResponseType>?
+    func fetch<Req: ApiRequest>(_ request: Req,
+                                completion: RequestCompletion<Req.ResponseType>?
     ) {
         guard let urlRequest = request.urlRequest else {
             completion?(.failure(ApiError.invalidRequest))
@@ -56,7 +54,7 @@ extension RequestManagerDefault: RequestManager {
                 completion?(.failure(ApiError.serverSide(data)))
                 return
             }
-            //
+            
             guard let data = data else {
                 completion?(.failure(ApiError.noData))
                 return

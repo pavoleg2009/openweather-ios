@@ -18,14 +18,18 @@ protocol Forecast5ViewInput: AnyObject {
 }
 
 protocol Forecast5ViewOutput: AnyObject {
-    func activate()
     
+    func activate()
 }
 
 protocol Forecast5DataSource: AnyObject {
+    
     var datasourceTitles: [String] { get }
     var cityName: String? { get }
-//    var dayForecasts: [DayForecastDiaplayData] { get }
     
+    func getSectionsCount() -> Int
+    func getItemsCount(for section: Int) -> Int
+    func getHeaderTitle(for section: Int) -> String?
+    func getForecastDisplayData(for indexPath: IndexPath) -> ForecastDisplayData?
     func selectDataSource(index: Int)
 }

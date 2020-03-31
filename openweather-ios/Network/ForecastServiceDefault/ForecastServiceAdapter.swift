@@ -19,16 +19,16 @@ final class ForecastServiceAdapter {
     
     // MARK: Life Cycle
     init(title: String,
-         service: ForecastService) {
-            
+         service: ForecastService
+    ) {
         self.title = title
         self.service = service
     }
 }
 
 extension ForecastServiceAdapter: ForecastService {
-    func getForecasts(city: String, completion: RequestCompletion<ForecastRequest.ResponseType>?) {
-        
+    func getForecasts(city: String, completion: RequestCompletion<ForecastRequest.ResponseType>?
+    ) {    
         return service.getForecasts(city: city,
                                     completion: completion)
     }

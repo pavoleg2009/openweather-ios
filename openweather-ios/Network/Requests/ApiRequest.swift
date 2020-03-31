@@ -12,17 +12,13 @@ protocol ApiRequest {
     
     associatedtype ResponseType: Codable
     
-//    var baseURL: URL { get }
     var path: String { get }
-//    var headers: [Header] { get set }
     var params: [String: String] { get }
     var method: HTTPMethod { get }
     var urlRequest: URLRequest? { get }
-    
     var decorer: JSONDecoder { get }
     
     func decodeResponse(data: Data) throws -> ResponseType
-//    func decodeError(data: Data) throws // -> ApiError
 }
 
 extension ApiRequest {
@@ -40,7 +36,7 @@ extension ApiRequest {
         
         if urlComponents != nil {
             for (key, value) in params
-                // sor to be able to be able to test
+                // sort by keys to be able to test url
                 .sorted(by: { $0.key < $1.key }) {
                 urlComponents?.queryItems?.append(
                     URLQueryItem(name: key, value: value)
@@ -59,11 +55,7 @@ extension ApiRequest {
         
         var urlRequest = URLRequest(url: requestURL)
 
-//        urlRequest.httpBody = httpBody
         urlRequest.httpMethod = method.rawValue
-//        for (key, value) in headers.dictionaryRepresentation {
-//            urlRequest.setValue(value, forHTTPHeaderField: key)
-//        }
         return urlRequest
     }
     

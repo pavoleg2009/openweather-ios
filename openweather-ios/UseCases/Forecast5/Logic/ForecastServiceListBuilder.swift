@@ -15,6 +15,7 @@ protocol ForecastServiceListBuilder {
 enum ForecastServiceListBuilderDefault: ForecastServiceListBuilder {
     
     static func makeForecastServices() -> [ForecastServiceAdapter] {
+        
         return [
             ForecastServiceAdapter(title: .online,
                                    service: ForecastServiceDefault()),

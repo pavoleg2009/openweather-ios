@@ -29,11 +29,11 @@ class Forecast5DisplayDataBuilderTests: XCTestCase {
         // then 8 for each other day and 8 - x for the last day.
         XCTAssert(5...6 ~= dayForecasts.count)
         
-        // we have 2 items in munich_2020_03_30_17_35.json for 30.03
-        XCTAssertEqual(dayForecasts[0].forecastItems.count, 2)
+        // we have 3 items in munich_2020_03_30_17_35.json for 30.03
+        XCTAssertEqual(dayForecasts[0].forecastItems.count, 3)
         XCTAssertEqual(dayForecasts[1].forecastItems.count, 8)
         XCTAssertEqual(dayForecasts[4].forecastItems.count, 8)
-        XCTAssertEqual(dayForecasts[5].forecastItems.count, 8 - 2)
+        XCTAssertEqual(dayForecasts[5].forecastItems.count, 8 - 3)
     }
 
 }

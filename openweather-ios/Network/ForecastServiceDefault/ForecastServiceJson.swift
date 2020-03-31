@@ -20,6 +20,7 @@ final class ForecastServiceJson {
     }
 }
 
+// MARK: ForecastService
 extension ForecastServiceJson: ForecastService {
 
     func getForecasts(city: String,

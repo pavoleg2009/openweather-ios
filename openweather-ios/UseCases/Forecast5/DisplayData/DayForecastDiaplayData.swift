@@ -10,6 +10,5 @@ import Foundation
 
 /// Forecast data for one day
 struct DayForecastDiaplayData {
-    let dateString: String
     var forecastItems: [ForecastDisplayData]
 }

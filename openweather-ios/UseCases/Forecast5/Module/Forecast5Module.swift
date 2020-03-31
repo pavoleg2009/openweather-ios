@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// Module is responsible for instantiating ViewController, Logic,
+/// managing module dependencies, binding module items (VC, Logic, etc)
+/// Usually responsible for showing other modules (screens)
 final class Forecast5Module {
     
     var viewController: Forecast5ViewController

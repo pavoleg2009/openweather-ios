@@ -15,7 +15,7 @@ final class Forecast5Logic {
     weak var view: Forecast5ViewInput!
     
     // MARK: Forecast5DataSource
-    var dayForecasts: [DayForecastDiaplayData] = []
+    private var dayForecasts: [DayForecastDiaplayData] = []
     var cityName: String?
     
     // MARK: Private Properties
@@ -34,12 +34,42 @@ final class Forecast5Logic {
 
 // Forecast5DataSource
 extension Forecast5Logic: Forecast5DataSource {
+    
     var datasourceTitles: [String] {
         forecastServiceAdapters.map { $0.title }
     }
-
-    func selectDataSource(index: Int) {
+    
+    func getSectionsCount(
+    ) -> Int {
+        dayForecasts.count
+    }
+    
+    func getItemsCount(for section: Int
+    ) -> Int {
+        guard section < dayForecasts.count else {
+            return 0
+        }
+        return dayForecasts[section].forecastItems.count
+    }
+    
+    func getHeaderTitle(for section: Int
+    ) -> String? {
+        return section > 0
+            ? dayForecasts[section].forecastItems.first?.date
+            : nil
+    }
+    
+    func getForecastDisplayData(for indexPath: IndexPath
+    ) -> ForecastDisplayData? {
+        guard indexPath.section < dayForecasts.count,
+            indexPath.row < dayForecasts[indexPath.section].forecastItems.count
+            else { return nil }
         
+        return dayForecasts[indexPath.section].forecastItems[indexPath.row]
+    }
+    
+    func selectDataSource(index: Int
+    ) {
         selectedDatasourceIndex = index
         view.showActivityIndicator()
         loadData {
@@ -51,7 +81,8 @@ extension Forecast5Logic: Forecast5DataSource {
 // MARK: - Forecast5ViewOutput
 extension Forecast5Logic: Forecast5ViewOutput {
     
-    func activate() {
+    func activate(
+    ) {
         // view not loaded yet: VC not in the View Hierarchy
         view.configure()
         view.showActivityIndicator()
@@ -64,7 +95,8 @@ extension Forecast5Logic: Forecast5ViewOutput {
 // NARK: - Private Mathods
 private extension Forecast5Logic {
     
-    func loadData(completion: VoidClosure?) {
+    func loadData(completion: VoidClosure?
+    ) {
         forecastService.getForecasts(city: .defaultCity) {
             [weak self] result in
             
@@ -79,19 +111,19 @@ private extension Forecast5Logic {
         }
     }
     
-    func handle(successWith forecastResponse: ForecastResponse) {
-        
+    func handle(successWith forecastResponse: ForecastResponse
+    ) {
         guard let forecasts = forecastResponse.items,
             !forecasts.isEmpty
             else { return }
         
         dayForecasts = Forecast5DisplayDataBuilder().make(from: forecasts)
         cityName = forecastResponse.city?.name
-        // TODO: Update city title
         view.update()
     }
     
-    func handle(_ error: ApiError) {
+    func handle(_ error: ApiError
+    ) {
         print("!!! \(type(of: self)).\(#function): ERROR: \(error)")
     }
 }
