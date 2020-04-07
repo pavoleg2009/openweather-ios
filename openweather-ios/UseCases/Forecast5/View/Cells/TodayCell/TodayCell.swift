@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayCell: UITableViewCell {
+class TodayCell: UITableViewCell, ReuseableView {
     
     // MARK: Outlets
     @IBOutlet private weak var descriptionLabel: UILabel!

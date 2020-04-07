@@ -23,6 +23,19 @@
 		7C1DC58A243339AD0072D834 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC588243339AD0072D834 /* ForecastCell.xib */; };
 		7C1DC58D243364770072D834 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC58B243364770072D834 /* TodayCell.swift */; };
 		7C1DC58E243364770072D834 /* TodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC58C243364770072D834 /* TodayCell.xib */; };
+		7C1DC5D2243CC9DC0072D834 /* AppDependecyContaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */; };
+		7C1DC5D5243CCC620072D834 /* GridModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D4243CCC620072D834 /* GridModule.swift */; };
+		7C1DC5D9243CCCBA0072D834 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D7243CCCBA0072D834 /* GridViewController.swift */; };
+		7C1DC5DA243CCCBA0072D834 /* GridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D8243CCCBA0072D834 /* GridViewController.xib */; };
+		7C1DC5DD243CD44A0072D834 /* GridLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5DC243CD44A0072D834 /* GridLogic.swift */; };
+		7C1DC5E0243CD4830072D834 /* GridProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5DF243CD4830072D834 /* GridProtocols.swift */; };
+		7C24546C243CD8290084DA10 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24546A243CD8290084DA10 /* WeatherCell.swift */; };
+		7C24546D243CD8290084DA10 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C24546B243CD8290084DA10 /* WeatherCell.xib */; };
+		7C245470243CE9410084DA10 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */; };
+		7C245472243CE9A20084DA10 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */; };
+		7C245474243CE9FE0084DA10 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245473243CE9FE0084DA10 /* Nibable.swift */; };
+		7C245477243CEB270084DA10 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245476243CEB270084DA10 /* ReuseableView.swift */; };
+		7C245479243CECB80084DA10 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */; };
 		7C438E222430D5EE008D9D42 /* RequestManagerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C438E212430D5EE008D9D42 /* RequestManagerDefault.swift */; };
 		7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52EB722430D44A0064731F /* ApiRequest.swift */; };
 		7C52EB752430D4960064731F /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52EB742430D4960064731F /* HTTPMethod.swift */; };
@@ -84,6 +97,19 @@
 		7C1DC588243339AD0072D834 /* ForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		7C1DC58B243364770072D834 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		7C1DC58C243364770072D834 /* TodayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCell.xib; sourceTree = "<group>"; };
+		7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependecyContaner.swift; sourceTree = "<group>"; };
+		7C1DC5D4243CCC620072D834 /* GridModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridModule.swift; sourceTree = "<group>"; };
+		7C1DC5D7243CCCBA0072D834 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		7C1DC5D8243CCCBA0072D834 /* GridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewController.xib; sourceTree = "<group>"; };
+		7C1DC5DC243CD44A0072D834 /* GridLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLogic.swift; sourceTree = "<group>"; };
+		7C1DC5DF243CD4830072D834 /* GridProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridProtocols.swift; sourceTree = "<group>"; };
+		7C24546A243CD8290084DA10 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		7C24546B243CD8290084DA10 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
+		7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		7C245473243CE9FE0084DA10 /* Nibable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
+		7C245476243CEB270084DA10 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
+		7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7C438E212430D5EE008D9D42 /* RequestManagerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerDefault.swift; sourceTree = "<group>"; };
 		7C52EB722430D44A0064731F /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		7C52EB742430D4960064731F /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -154,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				7C06CB87242A7B1900DCA7FB /* App */,
+				7C1DC5D0243CC9C80072D834 /* DI */,
+				7C24546E243CE91C0084DA10 /* Extensions */,
 				7C06CB8D242A801600DCA7FB /* Network */,
 				7C06CB8A242A7B6A00DCA7FB /* Resources */,
 				7CA2667A243110B700E45A01 /* UseCases */,
@@ -248,6 +276,80 @@
 			path = TodayCell;
 			sourceTree = "<group>";
 		};
+		7C1DC5D0243CC9C80072D834 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		7C1DC5D3243CCB9C0072D834 /* GridModule */ = {
+			isa = PBXGroup;
+			children = (
+				7C1DC5E1243CD4930072D834 /* Module */,
+				7C1DC5DB243CD42E0072D834 /* Logic */,
+				7C245469243CD7DE0084DA10 /* Cell */,
+				7C1DC5D6243CCC950072D834 /* ViewController */,
+			);
+			path = GridModule;
+			sourceTree = "<group>";
+		};
+		7C1DC5D6243CCC950072D834 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C1DC5D7243CCCBA0072D834 /* GridViewController.swift */,
+				7C1DC5D8243CCCBA0072D834 /* GridViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7C1DC5DB243CD42E0072D834 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7C1DC5DC243CD44A0072D834 /* GridLogic.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		7C1DC5E1243CD4930072D834 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				7C1DC5D4243CCC620072D834 /* GridModule.swift */,
+				7C1DC5DF243CD4830072D834 /* GridProtocols.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		7C245469243CD7DE0084DA10 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7C24546A243CD8290084DA10 /* WeatherCell.swift */,
+				7C24546B243CD8290084DA10 /* WeatherCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7C24546E243CE91C0084DA10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C245475243CEB130084DA10 /* Protocols */,
+				7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */,
+				7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C245475243CEB130084DA10 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C245476243CEB270084DA10 /* ReuseableView.swift */,
+				7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */,
+				7C245473243CE9FE0084DA10 /* Nibable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		7C52EB712430D4230064731F /* RequestManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +390,7 @@
 		7CA2667A243110B700E45A01 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				7C1DC5D3243CCB9C0072D834 /* GridModule */,
 				7CA2667B243110CF00E45A01 /* Forecast5 */,
 			);
 			path = UseCases;
@@ -455,6 +558,8 @@
 				7CFA20912432A02D00C526CC /* kazan_2020_03_31_00_45.json in Resources */,
 				7CFA208F2432796E00C526CC /* munich_2020_03_30_17_35.json in Resources */,
 				7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */,
+				7C1DC5DA243CCCBA0072D834 /* GridViewController.xib in Resources */,
+				7C24546D243CD8290084DA10 /* WeatherCell.xib in Resources */,
 				7C1DC58A243339AD0072D834 /* ForecastCell.xib in Resources */,
 				7C1DC58E243364770072D834 /* TodayCell.xib in Resources */,
 				7C06CB7D242A791200DCA7FB /* Assets.xcassets in Resources */,
@@ -503,6 +608,7 @@
 				7C52EB792430D5280064731F /* ApiError.swift in Sources */,
 				7CFA208524326FDC00C526CC /* ForecastServiceListBuilder.swift in Sources */,
 				7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */,
+				7C1DC5E0243CD4830072D834 /* GridProtocols.swift in Sources */,
 				7CFA208A2432732000C526CC /* ForecastServiceJson.swift in Sources */,
 				7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */,
 				7CFA20882432711700C526CC /* ForecastServiceAdapter.swift in Sources */,
@@ -511,19 +617,29 @@
 				7C06CB74242A791000DCA7FB /* AppDelegate.swift in Sources */,
 				7C06CBAD242AA0DC00DCA7FB /* Weather.swift in Sources */,
 				7C06CBA7242A878200DCA7FB /* ForecastItem.swift in Sources */,
+				7C245470243CE9410084DA10 /* UITableView+Extensions.swift in Sources */,
 				7C8AFBC0242BD79500D786D3 /* RequestManager.swift in Sources */,
 				7C1DC58D243364770072D834 /* TodayCell.swift in Sources */,
 				7C52EB752430D4960064731F /* HTTPMethod.swift in Sources */,
 				7C06CBA3242A855A00DCA7FB /* ForecastResponse.swift in Sources */,
 				7CA266712430EF5D00E45A01 /* URLSessionProtocol.swift in Sources */,
+				7C245474243CE9FE0084DA10 /* Nibable.swift in Sources */,
 				7C06CB9D242A81C400DCA7FB /* ForecastService.swift in Sources */,
+				7C245479243CECB80084DA10 /* UICollectionView+Extensions.swift in Sources */,
+				7C245472243CE9A20084DA10 /* ReuseIdentifiable.swift in Sources */,
 				7C06CB89242A7B3500DCA7FB /* AppConfigurator.swift in Sources */,
 				7CA266892431313900E45A01 /* DayForecastDiaplayData.swift in Sources */,
 				7C8AFBC9242BE2CF00D786D3 /* ForecastRequest.swift in Sources */,
 				7C1DC589243339AD0072D834 /* ForecastCell.swift in Sources */,
+				7C1DC5D9243CCCBA0072D834 /* GridViewController.swift in Sources */,
 				7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */,
 				7CA266852431209600E45A01 /* Forecast5Logic.swift in Sources */,
+				7C245477243CEB270084DA10 /* ReuseableView.swift in Sources */,
+				7C1DC5D2243CC9DC0072D834 /* AppDependecyContaner.swift in Sources */,
 				7C06CBA5242A85EF00DCA7FB /* City.swift in Sources */,
+				7C24546C243CD8290084DA10 /* WeatherCell.swift in Sources */,
+				7C1DC5D5243CCC620072D834 /* GridModule.swift in Sources */,
+				7C1DC5DD243CD44A0072D834 /* GridLogic.swift in Sources */,
 				7C438E222430D5EE008D9D42 /* RequestManagerDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

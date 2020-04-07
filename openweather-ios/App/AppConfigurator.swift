@@ -8,16 +8,53 @@
 
 import UIKit
 
+enum Tabs {
+    case tableView
+    case collectionView
+    
+    var title: String {
+        switch self {
+        case .tableView: return "List"
+        case .collectionView: return "Grid"
+        }
+    }
+    
+//    var factory: TabFactory
+}
+
 /// Configures initial app state
 enum AppConfigurator {
     
     static func configure(for window: UIWindow
     ) {
-        let navigationControler = UINavigationController()
-
+//        let navigationControler = UINavigationController()
+//
+//        let forecast5Module = Forecast5Module()
+//        navigationControler.viewControllers = [forecast5Module.viewController]
+//        window.rootViewController = navigationControler
+//        window.makeKeyAndVisible()
+        
+        let rootTabBarViewController = UITabBarController()
+        
+        // Tab 1: Table View
+        let listNavViewController = UINavigationController()
+        listNavViewController.tabBarItem = UITabBarItem(title: "List", image: nil, selectedImage: nil)
         let forecast5Module = Forecast5Module()
-        navigationControler.viewControllers = [forecast5Module.viewController]
-        window.rootViewController = navigationControler
+        listNavViewController.viewControllers = [forecast5Module.viewController]
+        
+        // Tab 2: Collection View
+        let gridNavViewController = UINavigationController()
+        gridNavViewController.tabBarItem = UITabBarItem(title: "Grid", image: nil, selectedImage: nil)
+        let gridModule = GridModule()
+        gridNavViewController.viewControllers = [gridModule.viewController]
+        
+        rootTabBarViewController.viewControllers = [
+            listNavViewController,
+            gridNavViewController
+        ]
+//        rootTabBarViewController.selectedIndex = 1
+        
+        window.rootViewController = rootTabBarViewController
         window.makeKeyAndVisible()
     }
 }

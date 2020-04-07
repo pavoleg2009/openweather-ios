@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ForecastCell: UITableViewCell {
+final class ForecastCell: UITableViewCell, ReuseableView {
 
     // MARK: Outlets
     @IBOutlet private weak var timeLabel: UILabel!

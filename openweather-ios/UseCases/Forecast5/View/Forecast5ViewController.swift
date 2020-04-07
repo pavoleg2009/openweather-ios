@@ -20,11 +20,9 @@ final class Forecast5ViewController: UIViewController {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
-            
-            let forecastNib = UINib(nibName: .forecastCellItentifier, bundle: nil)
-            tableView.register(forecastNib, forCellReuseIdentifier: .forecastCellItentifier)
-            let todayNib = UINib(nibName: .todayCellItentifier, bundle: nil)
-            tableView.register(todayNib, forCellReuseIdentifier: .todayCellItentifier)
+
+            tableView.owa_register(cellType: ForecastCell.self)
+            tableView.owa_register(cellType: TodayCell.self)
         }
     }
     
@@ -32,7 +30,7 @@ final class Forecast5ViewController: UIViewController {
     override func viewDidLoad(
     ) {
         super.viewDidLoad()
-        title = .title
+        navigationItem.title = .title
     }
     
     // MARK: Actions
@@ -68,7 +66,7 @@ extension Forecast5ViewController: Forecast5ViewInput {
      
     func update() {
         DispatchQueue.main.async {
-            self.title = self.logic.cityName ?? .title
+            self.navigationItem.title = self.logic.cityName ?? .title
             self.tableView.reloadData()
         }
     }
@@ -97,14 +95,12 @@ extension Forecast5ViewController: UITableViewDataSource {
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
             // TODAY:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: .todayCellItentifier, for: indexPath) as? TodayCell
-            else { fatalError("Can not dequeue cell with identifier: \(String.forecastCellItentifier)") }
+            let cell: TodayCell = tableView.owa_dequeueReusableCell(for: indexPath)
             cell.configure(with: displayData)
             return cell
         case (0, 1...), (1..., _):
             // Regular cell
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: .forecastCellItentifier, for: indexPath) as? ForecastCell
-            else { fatalError("Can not dequeue cell with identifier: \(String.forecastCellItentifier)") }
+            let cell: ForecastCell = tableView.owa_dequeueReusableCell(for: indexPath)
             cell.configure(with: displayData)
             return cell
         default:
@@ -121,7 +117,15 @@ extension Forecast5ViewController: UITableViewDelegate {
         if indexPath == .todayCellIndexPath {
             return view.bounds.width * .todayCellAspectRatio
         } else {
-            return UITableView.automaticDimension
+            return .forecastCellHeight
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == .todayCellIndexPath {
+            return view.bounds.width * .todayCellAspectRatio
+        } else {
+            return .forecastCellHeight
         }
     }
 }
@@ -145,8 +149,6 @@ private extension Forecast5ViewController {
 }
 
 private extension String {
-    static let todayCellItentifier = "TodayCell"
-    static let forecastCellItentifier = "ForecastCell"
     static let title = "Forecast"
 }
 
@@ -156,4 +158,5 @@ private extension IndexPath {
 
 private extension CGFloat {
     static let todayCellAspectRatio: CGFloat = 0.75
+    static let forecastCellHeight: CGFloat = 66
 }
