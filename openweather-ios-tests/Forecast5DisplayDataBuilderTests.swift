@@ -11,7 +11,7 @@ import XCTest
 
 final class Forecast5DisplayDataBuilderTests: XCTestCase {
 
-    func test_Forecast5DisplayDataBuilder_shouldMakeItemsFor5days() throws {
+    func test_make_shouldMakeItemsFor5days() throws {
         // GIVEN
         // Load from json
         let jsonFileName = "munich_2020_03_30_17_35"
@@ -35,4 +35,49 @@ final class Forecast5DisplayDataBuilderTests: XCTestCase {
         XCTAssertEqual(dayForecasts[4].forecastItems.count, 8)
         XCTAssertEqual(dayForecasts[5].forecastItems.count, 8 - 3)
     }
+    
+    func test_make2_whenFirstDayIsNotFull_showGeneratItemsFor6Days() throws {
+        // GIVEN
+        // Load from json
+        let jsonFileName = "munich_2020_03_30_17_35"
+        let response: ForecastResponse = try JsonReader().read(from: jsonFileName)
+        let items: [ForecastItem] = response.items ?? []
+        
+        // WHEN
+        let gridItems = Forecast5DisplayDataBuilder().makeGridItems(from: items)
+        
+        // THEN
+        XCTAssertEqual(gridItems.count, 6)
+        // checks for empty cells at the beginig of the first day
+        XCTAssertEqual(gridItems[0][0], GridItem.emptyCell)
+        XCTAssertEqual(gridItems[0][4], GridItem.emptyCell)
+        // and at the end of the last day
+        XCTAssertEqual(gridItems[5][5], GridItem.emptyCell)
+        XCTAssertEqual(gridItems[5][7], GridItem.emptyCell)
+    }
+    
+}
+
+extension GridItem: Equatable {
+    
+    public static func == (lhs: GridItem, rhs: GridItem) -> Bool {
+        switch (lhs, rhs) {
+        case let (.item(lhsItem), .item(rhsItem)):
+            return lhsItem.date == rhsItem.date
+        case (.emptyCell, .emptyCell):
+            return true
+        default:
+            return false
+        }
+    }
+
+    
+//    case fake(String)
+//    case emptyCell
+//    // TODO:
+//    // case hour
+//    // case ->
+//    // case ..
+////    case date(String)
+//    case item(ForecastDisplayData)
 }

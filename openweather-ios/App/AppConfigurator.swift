@@ -27,12 +27,6 @@ enum AppConfigurator {
     
     static func configure(for window: UIWindow
     ) {
-//        let navigationControler = UINavigationController()
-//
-//        let forecast5Module = Forecast5Module()
-//        navigationControler.viewControllers = [forecast5Module.viewController]
-//        window.rootViewController = navigationControler
-//        window.makeKeyAndVisible()
         
         let rootTabBarViewController = UITabBarController()
         
@@ -52,7 +46,7 @@ enum AppConfigurator {
             listNavViewController,
             gridNavViewController
         ]
-//        rootTabBarViewController.selectedIndex = 1
+        rootTabBarViewController.selectedIndex = 1
         
         window.rootViewController = rootTabBarViewController
         window.makeKeyAndVisible()

@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    func owa_register<T: ReuseableView>(cellType: T.Type
+    func owa_register<T: ReuseableView>(_ cellType: T.Type
     ) {
         self.register(T.nib, forCellReuseIdentifier: T.reuseIdentifier)
     }

@@ -10,12 +10,20 @@ import Foundation
 
 protocol GridViewInput: AnyObject {
     func configure()
+    func showActivityIndicator()
+    func hideActivityIndicator()
+    func showError(errorDescription: String)
+    func update()
 }
 
 protocol GridViewOutput: AnyObject {
     func activate()
 }
 
-protocol GridDataSoutce: AnyObject {
+protocol GridDataSource: AnyObject {
+    var numberOfItems: Int { get }
+    var displayData: [[GridItem]] { get }
     
+    // TODO: Rename
+    func getHeaderTitle(for section: Int) -> String?
 }

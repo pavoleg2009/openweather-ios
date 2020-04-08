@@ -288,9 +288,9 @@
 			isa = PBXGroup;
 			children = (
 				7C1DC5E1243CD4930072D834 /* Module */,
-				7C1DC5DB243CD42E0072D834 /* Logic */,
 				7C245469243CD7DE0084DA10 /* Cell */,
 				7C1DC5D6243CCC950072D834 /* ViewController */,
+				7C1DC5DB243CD42E0072D834 /* Logic */,
 			);
 			path = GridModule;
 			sourceTree = "<group>";

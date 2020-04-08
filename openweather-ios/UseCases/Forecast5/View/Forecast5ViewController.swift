@@ -21,8 +21,8 @@ final class Forecast5ViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
 
-            tableView.owa_register(cellType: ForecastCell.self)
-            tableView.owa_register(cellType: TodayCell.self)
+            tableView.owa_register(ForecastCell.self)
+            tableView.owa_register(TodayCell.self)
         }
     }
     
@@ -49,7 +49,6 @@ extension Forecast5ViewController: Forecast5ViewInput {
         // This method is called from logic while VC not in the view hierarche yet
         loadViewIfNeeded()
         configureSegmentedContol()
-        print("!!! \(type(of: self)).\(#function): ")
     }
     
     func showActivityIndicator() {

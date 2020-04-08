@@ -22,7 +22,11 @@ final class WeatherCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLabel.text = nil
+    }
 }
 
 extension WeatherCell: ReuseableView {}

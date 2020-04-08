@@ -8,6 +8,9 @@
 
 import UIKit
 
+// TODO: move to DI Container?
+let itemsInFullDay = 8
+
 /// Builds display data for 5 days forecast from array of ForecastItem.
 struct Forecast5DisplayDataBuilder {
     
@@ -55,6 +58,36 @@ struct Forecast5DisplayDataBuilder {
         
         return daysDisplayData
     }
+    
+    func makeGridItems(from items: [ForecastItem]
+    ) -> [[GridItem]] {
+        
+        // ForecastItem -> ForecastDisplayData -> [monthDay: [ForecastDisplayData]]
+        let itemsGroupedByDay = items
+            .compactMap { ForecastDisplayData(forecastItem: $0, using: calendar) }
+            .reduce(into: [:]) { $0[$1.monthDay, default:[]].append($1) }
+        
+        // sorted key -> [[ForecastDisplayData]] sorted by day -> [[GridItem]]
+        let gridItems = itemsGroupedByDay
+            .keys.sorted() // sort keys
+            .compactMap { itemsGroupedByDay[$0] } // map sorted key to
+            .map { $0.map { GridItem.item($0) } }
+        
+        let fullGridItems = gridItems
+            .enumerated()
+            .map { fill($1, toCount: itemsInFullDay, inFront: $0 == 0) }
+
+        return fullGridItems
+    }
+    
+    private func fill(_ arr: [GridItem], toCount tagetCount: Int, inFront: Bool) -> [GridItem] {
+        
+        let emptyItems = [GridItem](repeating: .emptyCell, count: tagetCount - arr.count)
+        
+        return inFront
+            ? emptyItems + arr
+            : arr + emptyItems
+    }
 }
 // MARK: Private
 private extension ForecastDisplayData {
@@ -77,7 +110,9 @@ private extension ForecastDisplayData {
         var calendar = calendar
         calendar.timeZone = timeZone
         
-        guard let day = calendar.dateComponents([.day], from: forecastItem.date).day,
+        guard
+            let month = calendar.dateComponents([.month], from: forecastItem.date).month,
+            let day = calendar.dateComponents([.day], from: forecastItem.date).day,
             let hour = calendar.dateComponents([.hour], from: forecastItem.date).hour,
             let iconName = forecastItem.weather.first?.icon,
             let weatherIcon = UIImage(named: iconName),
@@ -89,6 +124,7 @@ private extension ForecastDisplayData {
         self.description = description
         self.time = "\(hour):00"
         self.day = "\(day)" // used to group cells by date
+        self.monthDay = String(format: "%02d%02d", month, day ) // used to group cells by date
         self.date = ForecastDisplayData.dateFormatter.string(from: forecastItem.date)
         self.icon = weatherIcon
     }

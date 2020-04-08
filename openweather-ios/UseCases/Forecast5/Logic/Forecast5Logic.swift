@@ -83,7 +83,6 @@ extension Forecast5Logic: Forecast5ViewOutput {
     
     func activate(
     ) {
-        // view not loaded yet: VC not in the View Hierarchy
         view.configure()
         view.showActivityIndicator()
         loadData {
