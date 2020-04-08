@@ -10,7 +10,7 @@ import UIKit
 
 enum GridItem {
     // REMOVE:
-    case fake(String)
+//    case fake(String)
     case emptyCell
     // TODO:
     // case hour
@@ -101,14 +101,13 @@ extension GridViewController: UICollectionViewDataSource {
         switch displayData {
         
         case .emptyCell:
-            text = " ->"
-        case .fake(let txt):
-            text = txt
+            cell.configure(temp: " >> ", icon: nil)
+//        case .fake(let txt):
+//            text = txt
         case .item(let dData):
-            text = "\(dData.time) \(dData.temperature)"
+            cell.configure(temp: dData.temperature, icon: dData.icon)
         }
         
-        cell.dateLabel.text = "\(text)"
         return cell
     }
 }

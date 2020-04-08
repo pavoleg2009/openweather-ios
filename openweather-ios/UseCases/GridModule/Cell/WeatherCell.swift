@@ -11,11 +11,13 @@ import UIKit
 final class WeatherCell: UICollectionViewCell {
     
     // MARK: Outlets
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var weatherIconImageView: UIImageView!
     
     // TODO: replace with display data
-    func configure(text: String) {
-        dateLabel.text = text
+    func configure(temp: String, icon: UIImage?) {
+        weatherIconImageView.image = icon
+        temperatureLabel.text = temp
     }
     
     override func awakeFromNib() {
@@ -25,7 +27,8 @@ final class WeatherCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        dateLabel.text = nil
+        weatherIconImageView.image = nil
+        temperatureLabel.text = nil
     }
 }
 

@@ -119,8 +119,8 @@ private extension ForecastDisplayData {
             let description = forecastItem.weather.first?.description
             else { return nil }
         
-        self.temperature = "\(Int(forecastItem.main.temp)) °"
-        self.feelsLike = "\(String.fellsLike)\(Int(forecastItem.main.feelsLike)) °"
+        self.temperature = "\(Int(forecastItem.main.temp))°"
+        self.feelsLike = "\(String.fellsLike)\(Int(forecastItem.main.feelsLike))°"
         self.description = description
         self.time = "\(hour):00"
         self.day = "\(day)" // used to group cells by date

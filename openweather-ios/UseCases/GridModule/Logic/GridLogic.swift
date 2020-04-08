@@ -17,18 +17,7 @@ final class GridLogic {
         return displayData.count * (displayData.first?.count ?? 0)
     }
     
-    var displayData: [[GridItem]] = {
-        var firstRow: [GridItem] = [.emptyCell, .emptyCell] + Array(0...5).map { .fake("0-\($0)") }
-        let lastRow: [GridItem] = Array(0...5).map { .fake("5-\($0)") } + [.emptyCell, .emptyCell]
-        let fullRows: [[GridItem]] = Array(1...4).map {
-            row in
-            Array(0...7).map { .fake("\(row)-\($0)") }
-        }
-        
-        return [firstRow]
-             + fullRows
-             + [lastRow]
-    }()
+    var displayData: [[GridItem]] = []
     
     // MARK: Private Properties
     private var forecastServiceAdapters: [ForecastServiceAdapter]
@@ -67,9 +56,8 @@ private extension GridLogic {
         guard let forecasts = forecastResponse.items,
             !forecasts.isEmpty
             else { return }
-        // TODO: Generate ne data here
+    
         displayData = Forecast5DisplayDataBuilder().makeGridItems(from: forecasts)
-//        cityName = forecastResponse.city?.name
         view.update()
     }
     
