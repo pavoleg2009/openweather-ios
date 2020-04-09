@@ -8,19 +8,27 @@
 
 import UIKit
 
+protocol WeatherCellDisplayData {
+    var dateString: String? { get }
+    var icon: UIImage? { get }
+    var tempString: String? { get }
+}
+
 final class WeatherCell: UICollectionViewCell {
     
     // MARK: Outlets
-    
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var weatherIconImageView: UIImageView!
     
-    func configure(temp: String, icon: UIImage?) {
-        weatherIconImageView.image = icon
-        temperatureLabel.text = temp
+    // MARK: Internal Methods
+    func configure(with displayData: WeatherCellDisplayData) {
+        dateLabel.text = displayData.dateString
+        weatherIconImageView.image = displayData.icon
+        temperatureLabel.text = displayData.tempString
     }
     
+    // MARK: Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
@@ -37,7 +45,10 @@ final class WeatherCell: UICollectionViewCell {
         super.layoutSubviews()
         updateFonts(with: contentView.frame.height)
     }
-    
+}
+
+// MARK: Private Methods
+private extension WeatherCell {
     private func updateFonts(with cellHeight: CGFloat) {
         let dateFontSize: CGFloat = ceil(contentView.frame.height / .dateFontScale)
         let tempFontSize: CGFloat = ceil(contentView.frame.height / .tempFontScale)
@@ -49,6 +60,7 @@ final class WeatherCell: UICollectionViewCell {
 extension WeatherCell: ReuseableView {}
 
 private extension CGFloat {
+    static let cellCornerRadius: CGFloat = 4.0
     static let dateFontScale: CGFloat = 10.0
     static let tempFontScale: CGFloat = 8.0
 }

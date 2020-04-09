@@ -8,18 +8,6 @@
 
 import UIKit
 
-enum GridItem {
-    // REMOVE:
-//    case fake(String)
-    case emptyCell
-    // TODO:
-    // case hour
-    // case ->
-    // case ..
-//    case date(String)
-    case item(ForecastDisplayData)
-}
-
 final class GridViewController: UIViewController {
     
     let colCount = 8
@@ -59,8 +47,6 @@ final class GridViewController: UIViewController {
     // MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.title = "COLLECTION!"
         collectionView.reloadData()
     }
 }
@@ -86,8 +72,6 @@ extension GridViewController: GridViewInput {
      
     func update() {
         DispatchQueue.main.async {
-            // TODO:
-//            self.navigationItem.title = self.logic.cityName ?? .title
             self.collectionView.reloadData()
         }
     }
@@ -104,16 +88,8 @@ extension GridViewController: UICollectionViewDataSource {
         let col = indexPath.item / rowCount
         let row = indexPath.item % rowCount
         let displayData = logic.displayData[row][col]
-        let text: String
-        switch displayData {
         
-        case .emptyCell:
-            cell.configure(temp: " >> ", icon: nil)
-//        case .fake(let txt):
-//            text = txt
-        case .item(let dData):
-            cell.configure(temp: dData.temperature, icon: dData.icon)
-        }
+        cell.configure(with: displayData)
         
         return cell
     }
@@ -173,6 +149,7 @@ private extension GridViewController {
                                                 at: index,
                                                 animated: false)
         }
+        sourcesSegmetedConrol.selectedSegmentIndex = 0
 //        sourcesSegmetedConrol.removeAllSegments()
 //
 //        guard !logic.datasourceTitles.isEmpty else { return }

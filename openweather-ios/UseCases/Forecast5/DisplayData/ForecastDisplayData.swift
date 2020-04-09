@@ -14,7 +14,6 @@ struct ForecastDisplayData {
     let feelsLike: String
     let description: String
     let time: String
-    let day: String
     let monthDay: String
     let date: String
     let icon: UIImage
