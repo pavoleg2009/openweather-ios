@@ -22,7 +22,9 @@ final class WeatherCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        contentView.layer.cornerRadius = 4
+        contentView.layer.masksToBounds = true
     }
     
     override func prepareForReuse() {

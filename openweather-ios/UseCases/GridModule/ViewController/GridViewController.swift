@@ -33,7 +33,14 @@ final class GridViewController: UIViewController {
     var logic: Logic!
     
     // MARK: Outlets
-    @IBOutlet private weak var sourcesSegmetedConrol: UISegmentedControl!
+    private lazy var sourcesSegmetedConrol: UISegmentedControl = {
+        let sc = UISegmentedControl(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: 200,
+                                                  height: 40))
+        
+        return sc
+    }()
     
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
@@ -117,7 +124,7 @@ extension GridViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let height = (collectionView.bounds.height / CGFloat(rowCount)) - space
-        return CGSize(width: height, height: height)
+        return CGSize(width: height * .cellHeightToWidthRation, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -158,11 +165,18 @@ final class GridLayout: UICollectionViewFlowLayout {
 private extension GridViewController {
     
     func configureSegmentedContol() {
-        
+        print("!!! \(type(of: self)).\(#function): ")
+        self.navigationItem.titleView = sourcesSegmetedConrol
+
+        for (index, title) in ["Online API", "JSON File"].enumerated() {
+            sourcesSegmetedConrol.insertSegment(withTitle: title,
+                                                at: index,
+                                                animated: false)
+        }
 //        sourcesSegmetedConrol.removeAllSegments()
-//        
+//
 //        guard !logic.datasourceTitles.isEmpty else { return }
-//        
+//
 //        for (index, title) in logic.datasourceTitles.enumerated() {
 //            sourcesSegmetedConrol.insertSegment(withTitle: title,
 //                                                at: index,
@@ -171,4 +185,8 @@ private extension GridViewController {
 //        sourcesSegmetedConrol.selectedSegmentIndex = 0
     }
     
+}
+
+private extension CGFloat {
+    static let cellHeightToWidthRation: CGFloat = 1
 }

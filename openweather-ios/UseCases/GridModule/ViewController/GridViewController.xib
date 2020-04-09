@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,7 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GridViewController" customModule="openweather_ios" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="QPz-Ig-qLP" id="RNb-GR-BKh"/>
-                <outlet property="sourcesSegmetedConrol" destination="FfX-2b-CtH" id="oot-2K-xsh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,15 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FfX-2b-CtH">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QPz-Ig-qLP">
-                    <rect key="frame" x="0.0" y="31" width="414" height="865"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DFo-Sw-lcb">
                         <size key="itemSize" width="128" height="128"/>
@@ -38,13 +32,10 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="FfX-2b-CtH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cej-d6-LYD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QPz-Ig-qLP" secondAttribute="bottom" id="DNx-3E-lgN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QPz-Ig-qLP" secondAttribute="trailing" id="Otw-Jv-fCJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FfX-2b-CtH" secondAttribute="trailing" id="ZfU-v4-5Su"/>
-                <constraint firstItem="FfX-2b-CtH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="enQ-45-xRu"/>
-                <constraint firstItem="QPz-Ig-qLP" firstAttribute="top" secondItem="FfX-2b-CtH" secondAttribute="bottom" id="ia3-hC-wSa"/>
                 <constraint firstItem="QPz-Ig-qLP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kV5-IU-TTy"/>
+                <constraint firstItem="QPz-Ig-qLP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="mzb-qK-HJy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="123"/>
