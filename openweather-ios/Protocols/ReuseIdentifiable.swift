@@ -8,7 +8,6 @@
 
 import Foundation
 
-/// Helper to create reuserIdentifer from class name and reduce 
 protocol ReuseIdentifiable: AnyObject {
     static var reuseIdentifier: String { get }
 }

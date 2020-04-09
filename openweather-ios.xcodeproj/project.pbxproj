@@ -54,6 +54,11 @@
 		7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */; };
 		7CD944A8243F902300BABDB7 /* GridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944A7243F902300BABDB7 /* GridItem.swift */; };
 		7CD944AE243F9B9800BABDB7 /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */; };
+		7CD944B1243FA15300BABDB7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B0243FA15300BABDB7 /* RootViewController.swift */; };
+		7CD944B3243FA1B400BABDB7 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B2243FA1B400BABDB7 /* RootProtocols.swift */; };
+		7CD944B5243FA28300BABDB7 /* RootLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B4243FA28300BABDB7 /* RootLogic.swift */; };
+		7CD944B7243FA30100BABDB7 /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B6243FA30000BABDB7 /* RootTab.swift */; };
+		7CD944B9243FB00600BABDB7 /* UIColor+BrandColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B8243FB00600BABDB7 /* UIColor+BrandColors.swift */; };
 		7CE02C252431ED56004618F4 /* Forecast5DisplayDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */; };
 		7CE02C272431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C262431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift */; };
 		7CE02C2A2431F1CC004618F4 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE02C292431F1CC004618F4 /* JsonReader.swift */; };
@@ -129,6 +134,11 @@
 		7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDisplayData.swift; sourceTree = "<group>"; };
 		7CD944A7243F902300BABDB7 /* GridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItem.swift; sourceTree = "<group>"; };
 		7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
+		7CD944B0243FA15300BABDB7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		7CD944B2243FA1B400BABDB7 /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
+		7CD944B4243FA28300BABDB7 /* RootLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLogic.swift; sourceTree = "<group>"; };
+		7CD944B6243FA30000BABDB7 /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		7CD944B8243FB00600BABDB7 /* UIColor+BrandColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+BrandColors.swift"; sourceTree = "<group>"; };
 		7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5DisplayDataBuilder.swift; sourceTree = "<group>"; };
 		7CE02C262431EE6E004618F4 /* Forecast5DisplayDataBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5DisplayDataBuilderTests.swift; sourceTree = "<group>"; };
 		7CE02C292431F1CC004618F4 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 				7C06CB87242A7B1900DCA7FB /* App */,
 				7C1DC5D0243CC9C80072D834 /* DI */,
 				7C24546E243CE91C0084DA10 /* Extensions */,
+				7C245475243CEB130084DA10 /* Protocols */,
 				7C06CB8D242A801600DCA7FB /* Network */,
 				7C06CB8A242A7B6A00DCA7FB /* Resources */,
 				7CA2667A243110B700E45A01 /* UseCases */,
@@ -336,9 +347,9 @@
 		7C24546E243CE91C0084DA10 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7C245475243CEB130084DA10 /* Protocols */,
 				7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */,
 				7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */,
+				7CD944B8243FB00600BABDB7 /* UIColor+BrandColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +404,7 @@
 		7CA2667A243110B700E45A01 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				7CD944AF243FA10F00BABDB7 /* Root */,
 				7C1DC5D3243CCB9C0072D834 /* GridModule */,
 				7CA2667B243110CF00E45A01 /* Forecast5 */,
 			);
@@ -445,6 +457,17 @@
 				7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */,
 			);
 			path = ForecastRepository;
+			sourceTree = "<group>";
+		};
+		7CD944AF243FA10F00BABDB7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7CD944B0243FA15300BABDB7 /* RootViewController.swift */,
+				7CD944B2243FA1B400BABDB7 /* RootProtocols.swift */,
+				7CD944B4243FA28300BABDB7 /* RootLogic.swift */,
+				7CD944B6243FA30000BABDB7 /* RootTab.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		7CE02C282431F1AE004618F4 /* Helpers */ = {
@@ -616,6 +639,7 @@
 				7CE02C252431ED56004618F4 /* Forecast5DisplayDataBuilder.swift in Sources */,
 				7CA2667F24311FAD00E45A01 /* Forecast5Module.swift in Sources */,
 				7CA2667D24311EEA00E45A01 /* Forecast5Protocols.swift in Sources */,
+				7CD944B7243FA30100BABDB7 /* RootTab.swift in Sources */,
 				7C52EB792430D5280064731F /* ApiError.swift in Sources */,
 				7CFA208524326FDC00C526CC /* ForecastServiceListBuilder.swift in Sources */,
 				7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */,
@@ -624,6 +648,8 @@
 				7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */,
 				7CFA20882432711700C526CC /* ForecastServiceAdapter.swift in Sources */,
 				7C06CBA0242A81E100DCA7FB /* ForecastServiceDefault.swift in Sources */,
+				7CD944B1243FA15300BABDB7 /* RootViewController.swift in Sources */,
+				7CD944B9243FB00600BABDB7 /* UIColor+BrandColors.swift in Sources */,
 				7C06CBAB242A9E2400DCA7FB /* ForecastMain.swift in Sources */,
 				7C06CB74242A791000DCA7FB /* AppDelegate.swift in Sources */,
 				7C06CBAD242AA0DC00DCA7FB /* Weather.swift in Sources */,
@@ -653,6 +679,8 @@
 				7C1DC5D5243CCC620072D834 /* GridModule.swift in Sources */,
 				7C1DC5DD243CD44A0072D834 /* GridLogic.swift in Sources */,
 				7C438E222430D5EE008D9D42 /* RequestManagerDefault.swift in Sources */,
+				7CD944B5243FA28300BABDB7 /* RootLogic.swift in Sources */,
+				7CD944B3243FA1B400BABDB7 /* RootProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
