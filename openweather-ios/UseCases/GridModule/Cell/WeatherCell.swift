@@ -11,10 +11,11 @@ import UIKit
 final class WeatherCell: UICollectionViewCell {
     
     // MARK: Outlets
+    
+    @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var weatherIconImageView: UIImageView!
     
-    // TODO: replace with display data
     func configure(temp: String, icon: UIImage?) {
         weatherIconImageView.image = icon
         temperatureLabel.text = temp
@@ -32,6 +33,22 @@ final class WeatherCell: UICollectionViewCell {
         weatherIconImageView.image = nil
         temperatureLabel.text = nil
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateFonts(with: contentView.frame.height)
+    }
+    
+    private func updateFonts(with cellHeight: CGFloat) {
+        let dateFontSize: CGFloat = ceil(contentView.frame.height / .dateFontScale)
+        let tempFontSize: CGFloat = ceil(contentView.frame.height / .tempFontScale)
+        dateLabel.font = UIFont.systemFont(ofSize: dateFontSize)
+        temperatureLabel.font = UIFont.systemFont(ofSize: tempFontSize)
+    }
 }
 
 extension WeatherCell: ReuseableView {}
+
+private extension CGFloat {
+    static let dateFontScale: CGFloat = 10.0
+    static let tempFontScale: CGFloat = 8.0
+}
