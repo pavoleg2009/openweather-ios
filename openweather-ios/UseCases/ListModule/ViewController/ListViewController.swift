@@ -106,7 +106,6 @@ extension ListViewController: UITableViewDataSource {
             fatalError("No Cell type for indexPath: \(indexPath)")
         }
     }
-    
 }
 
 // MARK: UITableViewDelegate {

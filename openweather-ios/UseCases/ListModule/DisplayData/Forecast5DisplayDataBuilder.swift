@@ -8,15 +8,13 @@
 
 import UIKit
 
-// TODO: move to DI Container?
-let itemsInFullDay = 8
-
 /// Builds display data for 5 days forecast from array of ForecastItem.
 struct Forecast5DisplayDataBuilder {
     
     // MARK: Private Properties
     private let calendar: Calendar
     private let timezoneOffset = TimeZone.current.secondsFromGMT()
+    private let itemsInFullDay = 8
     
     // MARK: Life Cycle
     init(calendar: Calendar = Calendar.current

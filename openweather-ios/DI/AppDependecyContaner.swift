@@ -74,7 +74,6 @@ private extension AppDependecyContaner {
     }
     
     func makeGridLogic() -> GridLogic {
-        // TODO: Add dependency
         return GridLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
 }

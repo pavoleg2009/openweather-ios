@@ -397,8 +397,8 @@
 			children = (
 				7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */,
 				7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */,
-				7CD944B8243FB00600BABDB7 /* UIColor+BrandColors.swift */,
 				7C115D522440B7A40089866F /* UIViewController+Extensions.swift */,
+				7CD944B8243FB00600BABDB7 /* UIColor+BrandColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
