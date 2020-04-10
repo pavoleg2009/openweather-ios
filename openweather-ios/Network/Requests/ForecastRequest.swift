@@ -32,5 +32,4 @@ struct ForecastRequest: ApiRequest {
     init(city: String) {
         self.city = city
     }
-  
 }

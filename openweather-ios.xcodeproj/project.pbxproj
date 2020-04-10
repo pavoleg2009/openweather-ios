@@ -49,7 +49,6 @@
 		7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266802431207E00E45A01 /* Forecast5ViewController.swift */; };
 		7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA266812431207E00E45A01 /* Forecast5ViewController.xib */; };
 		7CA266852431209600E45A01 /* ListLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266842431209600E45A01 /* ListLogic.swift */; };
-		7CA266892431313900E45A01 /* DayForecastDiaplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */; };
 		7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */; };
 		7CD944A8243F902300BABDB7 /* GridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944A7243F902300BABDB7 /* GridItem.swift */; };
 		7CD944AE243F9B9800BABDB7 /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */; };
@@ -128,7 +127,6 @@
 		7CA266802431207E00E45A01 /* Forecast5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5ViewController.swift; sourceTree = "<group>"; };
 		7CA266812431207E00E45A01 /* Forecast5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Forecast5ViewController.xib; sourceTree = "<group>"; };
 		7CA266842431209600E45A01 /* ListLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLogic.swift; sourceTree = "<group>"; };
-		7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayForecastDiaplayData.swift; sourceTree = "<group>"; };
 		7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDisplayData.swift; sourceTree = "<group>"; };
 		7CD944A7243F902300BABDB7 /* GridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItem.swift; sourceTree = "<group>"; };
 		7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
@@ -193,6 +191,7 @@
 				7C1DC5D0243CC9C80072D834 /* DI */,
 				7C24546E243CE91C0084DA10 /* Extensions */,
 				7C245475243CEB130084DA10 /* Protocols */,
+				7C115D592440CC780089866F /* Services */,
 				7C06CB8D242A801600DCA7FB /* Network */,
 				7C06CB8A242A7B6A00DCA7FB /* Resources */,
 				7CA2667A243110B700E45A01 /* UseCases */,
@@ -299,6 +298,13 @@
 				7C24546B243CD8290084DA10 /* WeatherCell.xib */,
 			);
 			path = WeatherCell;
+			sourceTree = "<group>";
+		};
+		7C115D592440CC780089866F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7C1DC583243338F10072D834 /* Cells */ = {
@@ -476,7 +482,6 @@
 			children = (
 				7CE02C242431ED56004618F4 /* Forecast5DisplayDataBuilder.swift */,
 				7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */,
-				7CA266882431313900E45A01 /* DayForecastDiaplayData.swift */,
 			);
 			path = DisplayData;
 			sourceTree = "<group>";
@@ -686,7 +691,6 @@
 				7C06CB9D242A81C400DCA7FB /* ForecastService.swift in Sources */,
 				7C245479243CECB80084DA10 /* UICollectionView+Extensions.swift in Sources */,
 				7C245472243CE9A20084DA10 /* ReuseIdentifiable.swift in Sources */,
-				7CA266892431313900E45A01 /* DayForecastDiaplayData.swift in Sources */,
 				7C8AFBC9242BE2CF00D786D3 /* ForecastRequest.swift in Sources */,
 				7CD944AE243F9B9800BABDB7 /* ForecastRepository.swift in Sources */,
 				7C1DC589243339AD0072D834 /* ForecastCell.swift in Sources */,

@@ -15,7 +15,7 @@ final class ListLogic {
     weak var view: ListViewInput!
     
     // MARK: Forecast5DataSource
-    private var dayForecasts: [DayForecastDiaplayData] = []
+    private var dayForecasts: [[ForecastDisplayData]] = []
     var cityName: String?
     
     // MARK: Private Properties
@@ -49,23 +49,23 @@ extension ListLogic: Forecast5DataSource {
         guard section < dayForecasts.count else {
             return 0
         }
-        return dayForecasts[section].forecastItems.count
+        return dayForecasts[section].count
     }
     
     func getHeaderTitle(for section: Int
     ) -> String? {
         return section > 0
-            ? dayForecasts[section].forecastItems.first?.date
+            ? dayForecasts[section].first?.date
             : nil
     }
     
     func getForecastDisplayData(for indexPath: IndexPath
     ) -> ForecastDisplayData? {
         guard indexPath.section < dayForecasts.count,
-            indexPath.row < dayForecasts[indexPath.section].forecastItems.count
+            indexPath.row < dayForecasts[indexPath.section].count
             else { return nil }
         
-        return dayForecasts[indexPath.section].forecastItems[indexPath.row]
+        return dayForecasts[indexPath.section][indexPath.row]
     }
     
     func selectDataSource(index: Int

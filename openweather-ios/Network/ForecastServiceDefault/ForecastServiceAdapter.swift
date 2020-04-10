@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Allows add title for Service to be shown in UI
+/// Allows add title for Service to be shown in UI for selection
 final class ForecastServiceAdapter {
     
     // MARK: Private Properties

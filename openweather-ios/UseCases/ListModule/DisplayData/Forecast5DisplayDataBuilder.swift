@@ -26,11 +26,11 @@ struct Forecast5DisplayDataBuilder {
     
     // grouping list of forecasts by day
     func make(from items: [ForecastItem]
-    ) -> [DayForecastDiaplayData] {
+    ) -> [[ForecastDisplayData]] {
         
-        var daysDisplayData: [DayForecastDiaplayData] = []
+        var daysDisplayData: [[ForecastDisplayData]] = []
         var currentDay: String?
-        var currentDayDisplayData: DayForecastDiaplayData!
+        var currentDayDisplayData: [ForecastDisplayData] = []
         
         for forecastItem in items {
 
@@ -42,15 +42,16 @@ struct Forecast5DisplayDataBuilder {
                 // Add display data for previous day to resulting array.
                 // On the 1st iteration oneDayDisplayData will be nill
                 // because there were no previous day
-                if let currentDayDisplayData = currentDayDisplayData {
+                if !currentDayDisplayData.isEmpty {
                     daysDisplayData.append(currentDayDisplayData)
                 }
                 
-                currentDayDisplayData = DayForecastDiaplayData(forecastItems: [forecastDisplayData])
+                currentDayDisplayData = [forecastDisplayData]
+
                 currentDay = forecastDisplayData.monthDay
             } else {
                 // just add item to the current day
-                currentDayDisplayData.forecastItems.append(forecastDisplayData)
+                currentDayDisplayData.append(forecastDisplayData)
             }
         }
         // append last day
