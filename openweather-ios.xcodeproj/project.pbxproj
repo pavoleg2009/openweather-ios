@@ -46,12 +46,11 @@
 		7CA266742430F04A00E45A01 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266732430F04A00E45A01 /* URLSessionMock.swift */; };
 		7CA266762430F08500E45A01 /* URLSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */; };
 		7CA2667D24311EEA00E45A01 /* ListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2667C24311EEA00E45A01 /* ListProtocols.swift */; };
-		7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266802431207E00E45A01 /* Forecast5ViewController.swift */; };
-		7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA266812431207E00E45A01 /* Forecast5ViewController.xib */; };
+		7CA266822431207E00E45A01 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266802431207E00E45A01 /* ListViewController.swift */; };
+		7CA266832431207E00E45A01 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA266812431207E00E45A01 /* ListViewController.xib */; };
 		7CA266852431209600E45A01 /* ListLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA266842431209600E45A01 /* ListLogic.swift */; };
 		7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */; };
 		7CD944A8243F902300BABDB7 /* GridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944A7243F902300BABDB7 /* GridItem.swift */; };
-		7CD944AE243F9B9800BABDB7 /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */; };
 		7CD944B1243FA15300BABDB7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B0243FA15300BABDB7 /* RootViewController.swift */; };
 		7CD944B3243FA1B400BABDB7 /* RootProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B2243FA1B400BABDB7 /* RootProtocols.swift */; };
 		7CD944B5243FA28300BABDB7 /* RootLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD944B4243FA28300BABDB7 /* RootLogic.swift */; };
@@ -124,12 +123,11 @@
 		7CA266732430F04A00E45A01 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		7CA266752430F08500E45A01 /* URLSessionDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskMock.swift; sourceTree = "<group>"; };
 		7CA2667C24311EEA00E45A01 /* ListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocols.swift; sourceTree = "<group>"; };
-		7CA266802431207E00E45A01 /* Forecast5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast5ViewController.swift; sourceTree = "<group>"; };
-		7CA266812431207E00E45A01 /* Forecast5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Forecast5ViewController.xib; sourceTree = "<group>"; };
+		7CA266802431207E00E45A01 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7CA266812431207E00E45A01 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		7CA266842431209600E45A01 /* ListLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLogic.swift; sourceTree = "<group>"; };
 		7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDisplayData.swift; sourceTree = "<group>"; };
 		7CD944A7243F902300BABDB7 /* GridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItem.swift; sourceTree = "<group>"; };
-		7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
 		7CD944B0243FA15300BABDB7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7CD944B2243FA1B400BABDB7 /* RootProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootProtocols.swift; sourceTree = "<group>"; };
 		7CD944B4243FA28300BABDB7 /* RootLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootLogic.swift; sourceTree = "<group>"; };
@@ -222,8 +220,6 @@
 		7C06CB8D242A801600DCA7FB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7CD944AC243F9B7500BABDB7 /* ForecastRepository */,
-				7CFA20862432702500C526CC /* ForecastServiceDefault */,
 				7C52EB712430D4230064731F /* RequestManager */,
 				7C8AFBC7242BE2B400D786D3 /* Requests */,
 				7C06CBA1242A84B100DCA7FB /* Responses */,
@@ -303,8 +299,25 @@
 		7C115D592440CC780089866F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7CFA20862432702500C526CC /* ForecastService */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7C115D5A2440D4860089866F /* ForecastServiceDefault */ = {
+			isa = PBXGroup;
+			children = (
+				7C06CB9F242A81E100DCA7FB /* ForecastServiceDefault.swift */,
+			);
+			path = ForecastServiceDefault;
+			sourceTree = "<group>";
+		};
+		7C115D5B2440E4050089866F /* ForecastServiceJson */ = {
+			isa = PBXGroup;
+			children = (
+				7CFA20892432732000C526CC /* ForecastServiceJson.swift */,
+			);
+			path = ForecastServiceJson;
 			sourceTree = "<group>";
 		};
 		7C1DC583243338F10072D834 /* Cells */ = {
@@ -441,8 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				7CD944AF243FA10F00BABDB7 /* Root */,
-				7C1DC5D3243CCB9C0072D834 /* GridModule */,
 				7CA2667B243110CF00E45A01 /* ListModule */,
+				7C1DC5D3243CCB9C0072D834 /* GridModule */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -462,8 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				7C1DC583243338F10072D834 /* Cells */,
-				7CA266802431207E00E45A01 /* Forecast5ViewController.swift */,
-				7CA266812431207E00E45A01 /* Forecast5ViewController.xib */,
+				7CA266802431207E00E45A01 /* ListViewController.swift */,
+				7CA266812431207E00E45A01 /* ListViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -472,7 +485,6 @@
 			isa = PBXGroup;
 			children = (
 				7CA266842431209600E45A01 /* ListLogic.swift */,
-				7CFA208424326FDC00C526CC /* ForecastServiceListBuilder.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -484,14 +496,6 @@
 				7CA2668B243132EA00E45A01 /* ForecastDisplayData.swift */,
 			);
 			path = DisplayData;
-			sourceTree = "<group>";
-		};
-		7CD944AC243F9B7500BABDB7 /* ForecastRepository */ = {
-			isa = PBXGroup;
-			children = (
-				7CD944AD243F9B9800BABDB7 /* ForecastRepository.swift */,
-			);
-			path = ForecastRepository;
 			sourceTree = "<group>";
 		};
 		7CD944AF243FA10F00BABDB7 /* Root */ = {
@@ -521,15 +525,16 @@
 			path = Jsons;
 			sourceTree = "<group>";
 		};
-		7CFA20862432702500C526CC /* ForecastServiceDefault */ = {
+		7CFA20862432702500C526CC /* ForecastService */ = {
 			isa = PBXGroup;
 			children = (
 				7C06CB9C242A81C400DCA7FB /* ForecastService.swift */,
+				7C115D5A2440D4860089866F /* ForecastServiceDefault */,
+				7C115D5B2440E4050089866F /* ForecastServiceJson */,
 				7CFA20872432711700C526CC /* ForecastServiceAdapter.swift */,
-				7C06CB9F242A81E100DCA7FB /* ForecastServiceDefault.swift */,
-				7CFA20892432732000C526CC /* ForecastServiceJson.swift */,
+				7CFA208424326FDC00C526CC /* ForecastServiceListBuilder.swift */,
 			);
-			path = ForecastServiceDefault;
+			path = ForecastService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -617,7 +622,7 @@
 				7C06CB80242A791200DCA7FB /* LaunchScreen.storyboard in Resources */,
 				7CFA20912432A02D00C526CC /* kazan_2020_03_31_00_45.json in Resources */,
 				7CFA208F2432796E00C526CC /* munich_2020_03_30_17_35.json in Resources */,
-				7CA266832431207E00E45A01 /* Forecast5ViewController.xib in Resources */,
+				7CA266832431207E00E45A01 /* ListViewController.xib in Resources */,
 				7C1DC5DA243CCCBA0072D834 /* GridViewController.xib in Resources */,
 				7C24546D243CD8290084DA10 /* WeatherCell.xib in Resources */,
 				7C1DC58A243339AD0072D834 /* ForecastCell.xib in Resources */,
@@ -671,7 +676,7 @@
 				7CA2668C243132EA00E45A01 /* ForecastDisplayData.swift in Sources */,
 				7C1DC5E0243CD4830072D834 /* GridProtocols.swift in Sources */,
 				7CFA208A2432732000C526CC /* ForecastServiceJson.swift in Sources */,
-				7CA266822431207E00E45A01 /* Forecast5ViewController.swift in Sources */,
+				7CA266822431207E00E45A01 /* ListViewController.swift in Sources */,
 				7CFA20882432711700C526CC /* ForecastServiceAdapter.swift in Sources */,
 				7C06CBA0242A81E100DCA7FB /* ForecastServiceDefault.swift in Sources */,
 				7CD944B1243FA15300BABDB7 /* RootViewController.swift in Sources */,
@@ -692,7 +697,6 @@
 				7C245479243CECB80084DA10 /* UICollectionView+Extensions.swift in Sources */,
 				7C245472243CE9A20084DA10 /* ReuseIdentifiable.swift in Sources */,
 				7C8AFBC9242BE2CF00D786D3 /* ForecastRequest.swift in Sources */,
-				7CD944AE243F9B9800BABDB7 /* ForecastRepository.swift in Sources */,
 				7C1DC589243339AD0072D834 /* ForecastCell.swift in Sources */,
 				7C1DC5D9243CCCBA0072D834 /* GridViewController.swift in Sources */,
 				7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */,

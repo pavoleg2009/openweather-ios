@@ -10,10 +10,6 @@ import UIKit
 
 final class GridViewController: UIViewController {
     
-    let colCount = 8
-    var rowCount: Int {
-        logic.displayData.count
-    }
     let space: CGFloat = 8
     
     typealias Logic = GridViewOutput & GridDataSource
@@ -22,12 +18,9 @@ final class GridViewController: UIViewController {
     
     // MARK: Outlets
     private lazy var sourcesSegmetedConrol: UISegmentedControl = {
-        let sc = UISegmentedControl(frame: CGRect(x: 0,
-                                                  y: 0,
-                                                  width: 200,
-                                                  height: 40))
+        let sourcesSegmeted = UISegmentedControl(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
         
-        return sc
+        return sourcesSegmeted
     }()
     
     @IBOutlet private weak var collectionView: UICollectionView! {
@@ -77,19 +70,19 @@ extension GridViewController: GridViewInput {
     }
 }
 extension GridViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        logic.numberOfItems
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int
+    ) -> Int {
+        logic.getItemsCount(for: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: WeatherCell = collectionView.owa_dequeueReusableCell(for: indexPath)
+        guard let gridItem = logic.getGridItem(for: indexPath) else {
+            return UICollectionViewCell()
+        }
         
-        let col = indexPath.item / rowCount
-        let row = indexPath.item % rowCount
-        let displayData = logic.displayData[row][col]
-        
-        cell.configure(with: displayData)
+        cell.configure(with: gridItem)
         
         return cell
     }
@@ -99,7 +92,7 @@ extension GridViewController: UICollectionViewDataSource {
 extension GridViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = (collectionView.bounds.height / CGFloat(rowCount)) - space
+        let height = (collectionView.bounds.height / CGFloat(logic.rowCount)) - space
         return CGSize(width: height * .cellHeightToWidthRation, height: height)
     }
     
@@ -140,27 +133,31 @@ final class GridLayout: UICollectionViewFlowLayout {
 // MARK: - Private Methods
 private extension GridViewController {
     
+    @IBAction func sourceIndexDidChange(_ sender: Any
+    ) {
+        logic.selectDataSource(index: sourcesSegmetedConrol.selectedSegmentIndex)
+    }
+    
     func configureSegmentedContol() {
-        print("!!! \(type(of: self)).\(#function): ")
+        
         self.navigationItem.titleView = sourcesSegmetedConrol
-
-        for (index, title) in ["Online API", "JSON File"].enumerated() {
+        
+        sourcesSegmetedConrol.removeAllSegments()
+        guard !logic.datasourceTitles.isEmpty else { return }
+        
+        for (index, title) in logic.datasourceTitles.enumerated() {
             sourcesSegmetedConrol.insertSegment(withTitle: title,
                                                 at: index,
                                                 animated: false)
         }
+        sourcesSegmetedConrol.addTarget(self, action: #selector(sourceIndexDidChange), for: .valueChanged)
         sourcesSegmetedConrol.selectedSegmentIndex = 0
-        sourcesSegmetedConrol.tintColor = .owa_primaryBrandColor
-//        sourcesSegmetedConrol.removeAllSegments()
-//
-//        guard !logic.datasourceTitles.isEmpty else { return }
-//
-//        for (index, title) in logic.datasourceTitles.enumerated() {
-//            sourcesSegmetedConrol.insertSegment(withTitle: title,
-//                                                at: index,
-//                                                animated: false)
-//        }
-//        sourcesSegmetedConrol.selectedSegmentIndex = 0
+        if #available(iOS 13.0, *) {
+            sourcesSegmetedConrol.selectedSegmentTintColor = .owa_primaryBrandColor
+        } else {
+            sourcesSegmetedConrol.tintColor = .owa_primaryBrandColor
+        }
+        
     }
     
 }

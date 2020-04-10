@@ -21,14 +21,16 @@ protocol ListViewOutput: AnyObject {
     func activate()
 }
 
-protocol Forecast5DataSource: AnyObject {
+protocol ListDataSource: AnyObject {
     
-    var datasourceTitles: [String] { get }
     var cityName: String? { get }
+    var datasourceTitles: [String] { get }
+    
+    func selectDataSource(index: Int)
     
     func getSectionsCount() -> Int
     func getItemsCount(for section: Int) -> Int
     func getHeaderTitle(for section: Int) -> String?
     func getForecastDisplayData(for indexPath: IndexPath) -> ForecastDisplayData?
-    func selectDataSource(index: Int)
+    
 }

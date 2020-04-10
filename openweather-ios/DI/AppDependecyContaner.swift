@@ -45,13 +45,13 @@ private extension AppDependecyContaner {
         return navigationController
     }
     
-    func makeListViewController() -> Forecast5ViewController {
-        return Forecast5ViewController(nibName: Forecast5ViewController.nibName, bundle: nil)
+    func makeListViewController() -> ListViewController {
+        return ListViewController(nibName: ListViewController.nibName, bundle: nil)
     }
     
     func makeListLogic() -> ListLogic {
         // TODO: Add dependecy
-        return ListLogic()
+        return ListLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
     
     // Grid Module
@@ -75,6 +75,6 @@ private extension AppDependecyContaner {
     
     func makeGridLogic() -> GridLogic {
         // TODO: Add dependency
-        return GridLogic()
+        return GridLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
 }

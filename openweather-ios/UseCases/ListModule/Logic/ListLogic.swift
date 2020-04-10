@@ -14,29 +14,37 @@ final class ListLogic {
     
     weak var view: ListViewInput!
     
-    // MARK: Forecast5DataSource
+    // MARK: ListDataSource
     private var dayForecasts: [[ForecastDisplayData]] = []
     var cityName: String?
     
     // MARK: Private Properties
     private var forecastServiceAdapters: [ForecastServiceAdapter]
-    private var selectedDatasourceIndex = 0
+    private var selectedForecastServiceIndex = 0
     private var forecastService: ForecastService {
-        forecastServiceAdapters[selectedDatasourceIndex]
+        forecastServiceAdapters[selectedForecastServiceIndex]
     }
     
     // MARK: Life Cycle
-    init(builderType: ForecastServiceListBuilder.Type = ForecastServiceListBuilderDefault.self) {
-        
-        self.forecastServiceAdapters = builderType.makeForecastServices()
+    init(servicesBuilderType: ForecastServiceListBuilder.Type) {
+        self.forecastServiceAdapters = servicesBuilderType.makeForecastServices()
     }
 }
 
-// Forecast5DataSource
-extension ListLogic: Forecast5DataSource {
+// ListDataSource
+extension ListLogic: ListDataSource {
     
     var datasourceTitles: [String] {
         forecastServiceAdapters.map { $0.title }
+    }
+    
+    func selectDataSource(index: Int
+    ) {
+        selectedForecastServiceIndex = index
+        view.showActivityIndicator()
+        loadData {
+            self.view.hideActivityIndicator()
+        }
     }
     
     func getSectionsCount(
@@ -66,15 +74,6 @@ extension ListLogic: Forecast5DataSource {
             else { return nil }
         
         return dayForecasts[indexPath.section][indexPath.row]
-    }
-    
-    func selectDataSource(index: Int
-    ) {
-        selectedDatasourceIndex = index
-        view.showActivityIndicator()
-        loadData {
-            self.view.hideActivityIndicator()
-        }
     }
 }
 

@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class Forecast5ViewController: UIViewController {
+final class ListViewController: UIViewController {
     
-    typealias Logic = ListViewOutput & Forecast5DataSource
+    typealias Logic = ListViewOutput & ListDataSource
     
     var logic: Logic!
     
@@ -41,7 +41,7 @@ final class Forecast5ViewController: UIViewController {
 }
 
 // MARK: - ListViewInput
-extension Forecast5ViewController: ListViewInput {
+extension ListViewController: ListViewInput {
     
     func configure(
     ) {
@@ -72,7 +72,7 @@ extension Forecast5ViewController: ListViewInput {
 }
 
 // MARK: UITableViewDataSource {
-extension Forecast5ViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return logic.getSectionsCount()
@@ -110,7 +110,7 @@ extension Forecast5ViewController: UITableViewDataSource {
 }
 
 // MARK: UITableViewDelegate {
-extension Forecast5ViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == .todayCellIndexPath {
@@ -129,7 +129,7 @@ extension Forecast5ViewController: UITableViewDelegate {
     }
 }
 // MARK: - Private Methods
-private extension Forecast5ViewController {
+private extension ListViewController {
     
     func configureSegmentedContol() {
         

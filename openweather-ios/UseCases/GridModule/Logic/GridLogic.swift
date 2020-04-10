@@ -12,23 +12,17 @@ final class GridLogic {
     
     weak var view: GridViewInput!
     
-    // MARK: GridDataSource
-    var numberOfItems: Int {
-        return displayData.count * (displayData.first?.count ?? 0)
-    }
-    
-    var displayData: [[GridItem]] = []
-    
     // MARK: Private Properties
     private var forecastServiceAdapters: [ForecastServiceAdapter]
-    private var selectedDatasourceIndex = 0
+    private var selectedForecastServiceIndex = 0
     private var forecastService: ForecastService {
-        forecastServiceAdapters[selectedDatasourceIndex]
+        forecastServiceAdapters[selectedForecastServiceIndex]
     }
+    private var displayData: [[GridItem]] = []
+    
     // MARK: Life Cycle
-    init(builderType: ForecastServiceListBuilder.Type = ForecastServiceListBuilderDefault.self) {
-        
-        self.forecastServiceAdapters = builderType.makeForecastServices()
+    init(servicesBuilderType: ForecastServiceListBuilder.Type) {
+        self.forecastServiceAdapters = servicesBuilderType.makeForecastServices()
     }
 }
 
@@ -82,8 +76,40 @@ extension GridLogic: GridViewOutput {
 // MARK: - GridDataSource Methods
 extension GridLogic: GridDataSource {
     
-    func getHeaderTitle(for section: Int) -> String? {
-        return section == 0 ? "раз-раз" : "два-два"
+    var datasourceTitles: [String] {
+        forecastServiceAdapters.map { $0.title }
+    }
+    
+    var colCount: Int {
+        return 8 // 24 hours/day / 3 hours/forecastItem = 8 forecastItem/day
+    }
+    
+    var rowCount: Int {
+        displayData.count
+    }
+    
+    func selectDataSource(index: Int) {
+        selectedForecastServiceIndex = index
+        view.showActivityIndicator()
+        loadData {
+            self.view.hideActivityIndicator()
+        }
+    }
+    
+    func getItemsCount(for section: Int) -> Int {
+        return displayData.count * (displayData.first?.count ?? 0)
+    }
+    
+    func getGridItem(for indexPath: IndexPath) -> GridItem? {
+
+        let row = indexPath.item % rowCount
+        let col = indexPath.item / rowCount
+        
+        guard row < displayData.count,
+            col < displayData[row].count
+            else { return nil }
+        
+        return displayData[row][col]
     }
     
 }

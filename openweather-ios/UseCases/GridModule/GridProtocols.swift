@@ -9,6 +9,7 @@
 import Foundation
 
 protocol GridViewInput: AnyObject {
+    
     func configure()
     func showActivityIndicator()
     func hideActivityIndicator()
@@ -21,9 +22,14 @@ protocol GridViewOutput: AnyObject {
 }
 
 protocol GridDataSource: AnyObject {
-    var numberOfItems: Int { get }
-    var displayData: [[GridItem]] { get }
     
-    // TODO: Rename
-    func getHeaderTitle(for section: Int) -> String?
+    var datasourceTitles: [String] { get }
+    
+    var rowCount: Int { get }
+    var colCount: Int { get }
+    
+    func selectDataSource(index: Int)
+    
+    func getItemsCount(for section: Int) -> Int
+    func getGridItem(for indexPath: IndexPath) -> GridItem?
 }
