@@ -30,10 +30,10 @@ final class Forecast5DisplayDataBuilderTests: XCTestCase {
         XCTAssert(5...6 ~= dayForecasts.count)
         
         // we have 3 items in munich_2020_03_30_17_35.json for 30.03
-        XCTAssertEqual(dayForecasts[0].forecastItems.count, 3)
-        XCTAssertEqual(dayForecasts[1].forecastItems.count, 8)
-        XCTAssertEqual(dayForecasts[4].forecastItems.count, 8)
-        XCTAssertEqual(dayForecasts[5].forecastItems.count, 8 - 3)
+        XCTAssertEqual(dayForecasts[0].count, 3)
+        XCTAssertEqual(dayForecasts[1].count, 8)
+        XCTAssertEqual(dayForecasts[4].count, 8)
+        XCTAssertEqual(dayForecasts[5].count, 8 - 3)
     }
     
     func test_make2_whenFirstDayIsNotFull_showGeneratItemsFor6Days() throws {
