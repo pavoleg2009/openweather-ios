@@ -15,6 +15,11 @@ of the iOS, so 11.4 is selected;
 - API credential stored in open form
 - Some tests make real request to API, not ok got production
 
+## Updates in v.1.1:
+- New Grid layout added, both (old and new) arranged in UITabBarViewController
+- There is some uncertainty in requirements: “we present information ... in a form of *a list*, where *each row* contains all forecasts for a certain day, *scrollable off the screen to the right*. - is it a List itself or each Row scrollable?. I've selected the first option. If the second option is the case and we need to make each roll scrollable - we can use UITableView as root container, each cell will contain a UIScrollView with a UIStackView in it. When we get response - we populate UIStackView with managed subviews.
+- Because the comment was about layout, some logic just copy-pasted from old version.
+
 ##  Test Task Description
 
 Description:
