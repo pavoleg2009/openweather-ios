@@ -19,8 +19,8 @@ public class AppDependecyContaner {
         viewController.logic = logic
         logic.view = viewController
         viewController.viewControllers = [
-            makeListViewController(),
-            makeGridViewController()
+            makeListNavViewController(),
+            makeGridNavViewController()
         ]
         logic.activate()
         return viewController
@@ -29,19 +29,52 @@ public class AppDependecyContaner {
 
 // MARK: - Private nethods
 private extension AppDependecyContaner {
-    func makeListViewController() -> UIViewController {
+    
+    // List Module
+    func makeListNavViewController() -> UIViewController {
         
-        let listNavViewController = UINavigationController()
-        let forecast5Module = Forecast5Module()
-        listNavViewController.viewControllers = [forecast5Module.viewController]
-        return listNavViewController
+        let navigationController = UINavigationController()
+        let viewController = makeListViewController()
+        let logic = makeListLogic()
+        
+        viewController.logic = logic
+        logic.view = viewController
+        logic.activate()
+        
+        navigationController.viewControllers = [viewController]
+        return navigationController
     }
     
-    func makeGridViewController() -> UIViewController {
+    func makeListViewController() -> Forecast5ViewController {
+        return Forecast5ViewController(nibName: Forecast5ViewController.nibName, bundle: nil)
+    }
+    
+    func makeListLogic() -> ListLogic {
+        // TODO: Add dependecy
+        return ListLogic()
+    }
+    
+    // Grid Module
+    func makeGridNavViewController() -> UIViewController {
         
-        let gridNavViewController = UINavigationController()
-        let gridModule = GridModule()
-        gridNavViewController.viewControllers = [gridModule.viewController]
-        return gridNavViewController
+        let navigationController = UINavigationController()
+        let viewController = makeGridViewController()
+        let logic = makeGridLogic()
+
+        viewController.logic = logic
+        logic.view = viewController
+        logic.activate()
+        
+        navigationController.viewControllers = [viewController]
+        return navigationController
+    }
+    
+    func makeGridViewController() -> GridViewController {
+        return GridViewController(nibName: GridViewController.nibName, bundle: nil)
+    }
+    
+    func makeGridLogic() -> GridLogic {
+        // TODO: Add dependency
+        return GridLogic()
     }
 }

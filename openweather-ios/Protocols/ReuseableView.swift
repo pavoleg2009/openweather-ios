@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias ReuseableView = ReuseIdentifiable & Nibable
+typealias ReuseableView = ReuseIdentifiable & NibInstantiatable

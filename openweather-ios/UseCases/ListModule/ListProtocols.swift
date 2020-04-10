@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Forecast5ViewInput: AnyObject {
+protocol ListViewInput: AnyObject {
     
     func configure()
     func showActivityIndicator()
@@ -17,8 +17,7 @@ protocol Forecast5ViewInput: AnyObject {
     func update()
 }
 
-protocol Forecast5ViewOutput: AnyObject {
-    
+protocol ListViewOutput: AnyObject {
     func activate()
 }
 

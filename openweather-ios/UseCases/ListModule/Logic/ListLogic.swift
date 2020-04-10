@@ -1,5 +1,5 @@
 //
-//  Forecast5Logic.swift
+//  ListLogic.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 29.03.2020.
@@ -10,9 +10,9 @@ import Foundation
 
 typealias VoidClosure = () -> Void
 
-final class Forecast5Logic {
+final class ListLogic {
     
-    weak var view: Forecast5ViewInput!
+    weak var view: ListViewInput!
     
     // MARK: Forecast5DataSource
     private var dayForecasts: [DayForecastDiaplayData] = []
@@ -33,7 +33,7 @@ final class Forecast5Logic {
 }
 
 // Forecast5DataSource
-extension Forecast5Logic: Forecast5DataSource {
+extension ListLogic: Forecast5DataSource {
     
     var datasourceTitles: [String] {
         forecastServiceAdapters.map { $0.title }
@@ -78,8 +78,8 @@ extension Forecast5Logic: Forecast5DataSource {
     }
 }
 
-// MARK: - Forecast5ViewOutput
-extension Forecast5Logic: Forecast5ViewOutput {
+// MARK: - ListViewOutput
+extension ListLogic: ListViewOutput {
     
     func activate(
     ) {
@@ -92,7 +92,7 @@ extension Forecast5Logic: Forecast5ViewOutput {
 }
 
 // NARK: - Private Mathods
-private extension Forecast5Logic {
+private extension ListLogic {
     
     func loadData(completion: VoidClosure?
     ) {

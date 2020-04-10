@@ -37,8 +37,8 @@ final class Forecast5DisplayDataBuilderTests: XCTestCase {
     }
     
     func test_make2_whenFirstDayIsNotFull_showGeneratItemsFor6Days() throws {
+        
         // GIVEN
-        // Load from json
         let jsonFileName = "munich_2020_03_30_17_35"
         let response: ForecastResponse = try JsonReader().read(from: jsonFileName)
         let items: [ForecastItem] = response.items ?? []
@@ -48,7 +48,7 @@ final class Forecast5DisplayDataBuilderTests: XCTestCase {
         
         // THEN
         XCTAssertEqual(gridItems.count, 6)
-        // checks for empty cells at the beginig of the first day
+        // checks for empty cells in front of the first day's items
         XCTAssertEqual(gridItems[0][0], GridItem.emptyCell)
         XCTAssertEqual(gridItems[0][4], GridItem.emptyCell)
         // and at the end of the last day
@@ -70,14 +70,4 @@ extension GridItem: Equatable {
             return false
         }
     }
-
-    
-//    case fake(String)
-//    case emptyCell
-//    // TODO:
-//    // case hour
-//    // case ->
-//    // case ..
-////    case date(String)
-//    case item(ForecastDisplayData)
 }

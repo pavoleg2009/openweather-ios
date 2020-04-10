@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static let primaryBrandColor = UIColor(red: 236 / 255, green: 110 / 255, blue: 26 / 255, alpha: 1)
+    static let owa_primaryBrandColor = UIColor(red: 236 / 255, green: 110 / 255, blue: 26 / 255, alpha: 1)
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol ForecastRepository: AnyObject {
-    
-}
-
-final class ForecastRepositoryDefault {
-    
-    private var forecastServiceAdapters: [ForecastServiceAdapter]
-    
-    init() {
-        self.forecastServiceAdapters = []
-    }
-}
+//protocol ForecastRepository: AnyObject {
+//    
+//}
+//
+//final class ForecastRepositoryDefault {
+//    
+//    private var forecastServiceAdapters: [ForecastServiceAdapter]
+//    
+//    init() {
+//        self.forecastServiceAdapters = []
+//    }
+//}

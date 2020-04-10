@@ -150,6 +150,7 @@ private extension GridViewController {
                                                 animated: false)
         }
         sourcesSegmetedConrol.selectedSegmentIndex = 0
+        sourcesSegmetedConrol.tintColor = .owa_primaryBrandColor
 //        sourcesSegmetedConrol.removeAllSegments()
 //
 //        guard !logic.datasourceTitles.isEmpty else { return }

@@ -21,7 +21,7 @@ extension RootViewController: RootViewInput {
     
     func configure() {
         
-        tabBar.tintColor = .primaryBrandColor
+        tabBar.tintColor = .owa_primaryBrandColor
         logic.tabs
             .map { UITabBarItem(title: $0.title, image: $0.icon, selectedImage: nil) }
             .enumerated()

@@ -10,7 +10,7 @@ import UIKit
 
 final class Forecast5ViewController: UIViewController {
     
-    typealias Logic = Forecast5ViewOutput & Forecast5DataSource
+    typealias Logic = ListViewOutput & Forecast5DataSource
     
     var logic: Logic!
     
@@ -40,8 +40,8 @@ final class Forecast5ViewController: UIViewController {
     }
 }
 
-// MARK: - Forecast5ViewInput
-extension Forecast5ViewController: Forecast5ViewInput {
+// MARK: - ListViewInput
+extension Forecast5ViewController: ListViewInput {
     
     func configure(
     ) {
