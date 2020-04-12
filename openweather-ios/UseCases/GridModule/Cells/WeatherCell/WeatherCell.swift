@@ -57,7 +57,7 @@ private extension WeatherCell {
     }
 }
 
-extension WeatherCell: ReuseableView {}
+extension WeatherCell: ReusableView {}
 
 private extension CGFloat {
     static let cellCornerRadius: CGFloat = 4.0

@@ -38,7 +38,7 @@ struct Forecast5DisplayDataBuilder {
             // if we got the first element of the next day
             if forecastDisplayData.monthDay != currentDay {
                 // Add display data for previous day to resulting array.
-                // On the 1st iteration oneDayDisplayData will be nill
+                // On the 1st iteration oneDayDisplayData will be nil
                 // because there were no previous day
                 if !currentDayDisplayData.isEmpty {
                     daysDisplayData.append(currentDayDisplayData)
@@ -79,9 +79,9 @@ struct Forecast5DisplayDataBuilder {
         return fullGridItems
     }
     
-    private func fill(_ arr: [GridItem], toCount tagetCount: Int, inFront: Bool) -> [GridItem] {
+    private func fill(_ arr: [GridItem], toCount targetCount: Int, inFront: Bool) -> [GridItem] {
         
-        let emptyItems = [GridItem](repeating: .emptyCell, count: tagetCount - arr.count)
+        let emptyItems = [GridItem](repeating: .emptyCell, count: targetCount - arr.count)
         
         return inFront
             ? emptyItems + arr

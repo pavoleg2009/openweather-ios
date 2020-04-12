@@ -17,10 +17,10 @@ final class GridViewController: UIViewController {
     var logic: Logic!
     
     // MARK: Outlets
-    private lazy var sourcesSegmetedConrol: UISegmentedControl = {
-        let sourcesSegmeted = UISegmentedControl(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
+    private lazy var sourcesSegmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
         
-        return sourcesSegmeted
+        return segmentedControl
     }()
     
     @IBOutlet private weak var collectionView: UICollectionView! {
@@ -46,11 +46,12 @@ final class GridViewController: UIViewController {
 
 // MARK: - GridViewInput
 extension GridViewController: GridViewInput {
+    
     func configure() {
         loadViewIfNeeded()
-        configureSegmentedContol()
-        
+        configureSegmentedControl()
     }
+    
     func showActivityIndicator() {
         print("!!! \(type(of: self)).\(#function): Show activity indicator here")
     }
@@ -70,6 +71,7 @@ extension GridViewController: GridViewInput {
     }
 }
 extension GridViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int
     ) -> Int {
         logic.getItemsCount(for: section)
@@ -135,27 +137,27 @@ private extension GridViewController {
     
     @IBAction func sourceIndexDidChange(_ sender: Any
     ) {
-        logic.selectDataSource(index: sourcesSegmetedConrol.selectedSegmentIndex)
+        logic.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
     }
     
-    func configureSegmentedContol() {
+    func configureSegmentedControl() {
         
-        self.navigationItem.titleView = sourcesSegmetedConrol
+        self.navigationItem.titleView = sourcesSegmentedControl
         
-        sourcesSegmetedConrol.removeAllSegments()
+        sourcesSegmentedControl.removeAllSegments()
         guard !logic.datasourceTitles.isEmpty else { return }
         
         for (index, title) in logic.datasourceTitles.enumerated() {
-            sourcesSegmetedConrol.insertSegment(withTitle: title,
-                                                at: index,
-                                                animated: false)
+            sourcesSegmentedControl.insertSegment(withTitle: title,
+                                                  at: index,
+                                                  animated: false)
         }
-        sourcesSegmetedConrol.addTarget(self, action: #selector(sourceIndexDidChange), for: .valueChanged)
-        sourcesSegmetedConrol.selectedSegmentIndex = 0
+        sourcesSegmentedControl.addTarget(self, action: #selector(sourceIndexDidChange), for: .valueChanged)
+        sourcesSegmentedControl.selectedSegmentIndex = 0
         if #available(iOS 13.0, *) {
-            sourcesSegmetedConrol.selectedSegmentTintColor = .owa_primaryBrandColor
+            sourcesSegmentedControl.selectedSegmentTintColor = .owa_primaryBrandColor
         } else {
-            sourcesSegmetedConrol.tintColor = .owa_primaryBrandColor
+            sourcesSegmentedControl.tintColor = .owa_primaryBrandColor
         }
         
     }

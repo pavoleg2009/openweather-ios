@@ -90,7 +90,7 @@ extension ListLogic: ListViewOutput {
     }
 }
 
-// NARK: - Private Mathods
+// MARK: - Private Methods
 private extension ListLogic {
     
     func loadData(completion: VoidClosure?

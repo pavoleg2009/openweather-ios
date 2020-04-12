@@ -26,7 +26,7 @@ final class GridLogic {
     }
 }
 
-// NARK: - Private Mathods
+// MARK: - Private Methods
 private extension GridLogic {
     
     func loadData(completion: VoidClosure?

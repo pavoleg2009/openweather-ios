@@ -15,7 +15,7 @@ final class ListViewController: UIViewController {
     var logic: Logic!
     
     // MARK: Outlets
-    @IBOutlet private weak var sourcesSegmetedConrol: UISegmentedControl!
+    @IBOutlet private weak var sourcesSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
@@ -36,7 +36,7 @@ final class ListViewController: UIViewController {
     // MARK: Actions
     @IBAction private func sourceIndexDidChange(_ sender: Any
     ) {
-        logic.selectDataSource(index: sourcesSegmetedConrol.selectedSegmentIndex)
+        logic.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
     }
 }
 
@@ -46,9 +46,9 @@ extension ListViewController: ListViewInput {
     func configure(
     ) {
         // We need to load view before we can configure it
-        // This method is called from logic while VC not in the view hierarche yet
+        // This method is called from logic while VC not in the view hierarchy yet
         loadViewIfNeeded()
-        configureSegmentedContol()
+        configureSegmentedControl()
     }
     
     func showActivityIndicator() {
@@ -89,7 +89,7 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let displayData = logic.getForecastDisplayData(for: indexPath)
-        else { fatalError("Can not retrive displayDaya for indexPath: \(indexPath)") }
+        else { fatalError("Can not retrieve displayData for indexPath: \(indexPath)") }
         
         switch (indexPath.section, indexPath.row) {
         case (0, 0):
@@ -130,18 +130,18 @@ extension ListViewController: UITableViewDelegate {
 // MARK: - Private Methods
 private extension ListViewController {
     
-    func configureSegmentedContol() {
+    func configureSegmentedControl() {
         
-        sourcesSegmetedConrol.removeAllSegments()
+        sourcesSegmentedControl.removeAllSegments()
         
         guard !logic.datasourceTitles.isEmpty else { return }
         
         for (index, title) in logic.datasourceTitles.enumerated() {
-            sourcesSegmetedConrol.insertSegment(withTitle: title,
-                                                at: index,
-                                                animated: false)
+            sourcesSegmentedControl.insertSegment(withTitle: title,
+                                                  at: index,
+                                                  animated: false)
         }
-        sourcesSegmetedConrol.selectedSegmentIndex = 0
+        sourcesSegmentedControl.selectedSegmentIndex = 0
     }
     
 }

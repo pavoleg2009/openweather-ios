@@ -12,7 +12,7 @@ import XCTest
 // swiftlint:disable all
 final class RequestManagerTests: XCTestCase {
 
-    func test_reuqestManager_shoultCallCompletionWithResult() {
+    func test_requestManager_shouldCallCompletionWithResult() {
         
         // GIVEN
         let sut = RequestManagerDefault()
@@ -35,7 +35,7 @@ final class RequestManagerTests: XCTestCase {
         wait(for: [exp], timeout: 2)
     }
     
-    func test_reuqestManager_shoultCallCompletionWithError() {
+    func test_requestManager_shouldCallCompletionWithError() {
         
         // GIVEN
         let sessionMock: URLSessionProtocol = URLSessionMock(data: nil, response: nil, error: ApiError.noData)

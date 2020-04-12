@@ -1,5 +1,5 @@
 //
-//  ReuseableView.swift
+//  ReusebleView.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 07.04.2020.
@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias ReuseableView = ReuseIdentifiable & NibInstantiatable
+typealias ReusableView = ReuseIdentifiable & NibInstantiatable

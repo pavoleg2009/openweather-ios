@@ -1,5 +1,5 @@
 //
-//  AppDependecyContaner.swift
+//  AppDependencyContainer.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 07.04.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AppDependecyContaner {
+public class AppDependencyContainer {
     
     init() {}
     
@@ -27,8 +27,8 @@ public class AppDependecyContaner {
     }
 }
 
-// MARK: - Private nethods
-private extension AppDependecyContaner {
+// MARK: - Private methods
+private extension AppDependencyContainer {
     
     // List Module
     func makeListNavViewController() -> UIViewController {
@@ -50,7 +50,7 @@ private extension AppDependecyContaner {
     }
     
     func makeListLogic() -> ListLogic {
-        // TODO: Add dependecy
+        // TODO: Add dependency
         return ListLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
     

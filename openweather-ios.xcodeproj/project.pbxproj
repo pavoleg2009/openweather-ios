@@ -23,7 +23,7 @@
 		7C1DC58A243339AD0072D834 /* ForecastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC588243339AD0072D834 /* ForecastCell.xib */; };
 		7C1DC58D243364770072D834 /* TodayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC58B243364770072D834 /* TodayCell.swift */; };
 		7C1DC58E243364770072D834 /* TodayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC58C243364770072D834 /* TodayCell.xib */; };
-		7C1DC5D2243CC9DC0072D834 /* AppDependecyContaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */; };
+		7C1DC5D2243CC9DC0072D834 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D1243CC9DC0072D834 /* AppDependencyContainer.swift */; };
 		7C1DC5D9243CCCBA0072D834 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D7243CCCBA0072D834 /* GridViewController.swift */; };
 		7C1DC5DA243CCCBA0072D834 /* GridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C1DC5D8243CCCBA0072D834 /* GridViewController.xib */; };
 		7C1DC5DD243CD44A0072D834 /* GridLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DC5DC243CD44A0072D834 /* GridLogic.swift */; };
@@ -33,7 +33,7 @@
 		7C245470243CE9410084DA10 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */; };
 		7C245472243CE9A20084DA10 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */; };
 		7C245474243CE9FE0084DA10 /* NibInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245473243CE9FE0084DA10 /* NibInstantiatable.swift */; };
-		7C245477243CEB270084DA10 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245476243CEB270084DA10 /* ReuseableView.swift */; };
+		7C245477243CEB270084DA10 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245476243CEB270084DA10 /* ReusableView.swift */; };
 		7C245479243CECB80084DA10 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */; };
 		7C438E222430D5EE008D9D42 /* RequestManagerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C438E212430D5EE008D9D42 /* RequestManagerDefault.swift */; };
 		7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C52EB722430D44A0064731F /* ApiRequest.swift */; };
@@ -100,7 +100,7 @@
 		7C1DC588243339AD0072D834 /* ForecastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastCell.xib; sourceTree = "<group>"; };
 		7C1DC58B243364770072D834 /* TodayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCell.swift; sourceTree = "<group>"; };
 		7C1DC58C243364770072D834 /* TodayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayCell.xib; sourceTree = "<group>"; };
-		7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependecyContaner.swift; sourceTree = "<group>"; };
+		7C1DC5D1243CC9DC0072D834 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		7C1DC5D7243CCCBA0072D834 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		7C1DC5D8243CCCBA0072D834 /* GridViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridViewController.xib; sourceTree = "<group>"; };
 		7C1DC5DC243CD44A0072D834 /* GridLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLogic.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		7C24546F243CE9410084DA10 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		7C245473243CE9FE0084DA10 /* NibInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiatable.swift; sourceTree = "<group>"; };
-		7C245476243CEB270084DA10 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
+		7C245476243CEB270084DA10 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		7C245478243CECB80084DA10 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7C438E212430D5EE008D9D42 /* RequestManagerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerDefault.swift; sourceTree = "<group>"; };
 		7C52EB722430D44A0064731F /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 		7C1DC5D0243CC9C80072D834 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				7C1DC5D1243CC9DC0072D834 /* AppDependecyContaner.swift */,
+				7C1DC5D1243CC9DC0072D834 /* AppDependencyContainer.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 		7C245475243CEB130084DA10 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7C245476243CEB270084DA10 /* ReuseableView.swift */,
+				7C245476243CEB270084DA10 /* ReusableView.swift */,
 				7C245471243CE9A20084DA10 /* ReuseIdentifiable.swift */,
 				7C245473243CE9FE0084DA10 /* NibInstantiatable.swift */,
 			);
@@ -701,8 +701,8 @@
 				7C1DC5D9243CCCBA0072D834 /* GridViewController.swift in Sources */,
 				7C52EB732430D44A0064731F /* ApiRequest.swift in Sources */,
 				7CA266852431209600E45A01 /* ListLogic.swift in Sources */,
-				7C245477243CEB270084DA10 /* ReuseableView.swift in Sources */,
-				7C1DC5D2243CC9DC0072D834 /* AppDependecyContaner.swift in Sources */,
+				7C245477243CEB270084DA10 /* ReusableView.swift in Sources */,
+				7C1DC5D2243CC9DC0072D834 /* AppDependencyContainer.swift in Sources */,
 				7C06CBA5242A85EF00DCA7FB /* City.swift in Sources */,
 				7C24546C243CD8290084DA10 /* WeatherCell.swift in Sources */,
 				7C1DC5DD243CD44A0072D834 /* GridLogic.swift in Sources */,

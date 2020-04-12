@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="openweather_ios" customModuleProvider="target">
             <connections>
-                <outlet property="sourcesSegmetedConrol" destination="4Ra-yH-S0m" id="UiP-4c-q07"/>
+                <outlet property="sourcesSegmentedControl" destination="4Ra-yH-S0m" id="UiP-4c-q07"/>
                 <outlet property="tableView" destination="7n1-4Z-F34" id="IQ3-n2-yJM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -16,7 +16,7 @@ protocol ApiRequest {
     var params: [String: String] { get }
     var method: HTTPMethod { get }
     var urlRequest: URLRequest? { get }
-    var decorer: JSONDecoder { get }
+    var decoder: JSONDecoder { get }
     
     func decodeResponse(data: Data) throws -> ResponseType
 }
@@ -60,11 +60,11 @@ extension ApiRequest {
     }
     
     // default response decoder
-    var decorer: JSONDecoder {
+    var decoder: JSONDecoder {
         return RequestManagerDefault.defaultDecoder
     }
     
     func decodeResponse(data: Data) throws -> ResponseType {
-        return try decorer.decode(ResponseType.self, from: data)
+        return try decoder.decode(ResponseType.self, from: data)
     }
 }

@@ -11,14 +11,15 @@ import UIKit
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let appDependencyContaner = AppDependecyContaner()
+    let appDependencyContainer = AppDependencyContainer()
     
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = appDependencyContaner.makeRootViewController()
+        window.rootViewController = appDependencyContainer.makeRootViewController()
         window.makeKeyAndVisible()
         self.window = window
         
