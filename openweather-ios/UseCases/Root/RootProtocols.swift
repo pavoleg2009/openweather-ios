@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol RootViewInput {
+protocol RootViewInput: AnyObject {
     func configure()
     func selectTab(_ tab: RootTab)
 }
 
-protocol RootViewOutput {
+protocol RootViewOutput: AnyObject {
     func activate()
 }
 
-protocol RootDataSource {
+protocol RootDataSource: AnyObject {
     var tabs: [RootTab] { get }
 }

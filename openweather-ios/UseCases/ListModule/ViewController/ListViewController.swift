@@ -10,9 +10,9 @@ import UIKit
 
 final class ListViewController: UIViewController {
     
-    typealias Logic = ListViewOutput & ListDataSource
+    typealias Presenter = ListViewOutput & ListDataSource
     
-    var logic: Logic!
+    var presenter: Presenter!
     
     // MARK: Outlets
     @IBOutlet private weak var sourcesSegmentedControl: UISegmentedControl!
@@ -21,8 +21,8 @@ final class ListViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
 
-            tableView.owa_register(ForecastCell.self)
-            tableView.owa_register(TodayCell.self)
+            tableView.owa_register(RegularForecastListCell.self)
+            tableView.owa_register(TodayForecastListCell.self)
         }
     }
     
@@ -36,7 +36,7 @@ final class ListViewController: UIViewController {
     // MARK: Actions
     @IBAction private func sourceIndexDidChange(_ sender: Any
     ) {
-        logic.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
+        presenter.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
     }
 }
 
@@ -65,7 +65,7 @@ extension ListViewController: ListViewInput {
      
     func update() {
         DispatchQueue.main.async {
-            self.navigationItem.title = self.logic.cityName ?? .title
+            self.navigationItem.title = self.presenter.cityName ?? .title
             self.tableView.reloadData()
         }
     }
@@ -75,35 +75,33 @@ extension ListViewController: ListViewInput {
 extension ListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return logic.getSectionsCount()
+        return presenter.getSectionsCount()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return logic.getHeaderTitle(for: section)
+        return presenter.getHeaderTitle(for: section)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return logic.getItemsCount(for: section)
+        return presenter.getItemsCount(for: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let displayData = logic.getForecastDisplayData(for: indexPath)
-        else { fatalError("Can not retrieve displayData for indexPath: \(indexPath)") }
-        
-        switch (indexPath.section, indexPath.row) {
-        case (0, 0):
-            // TODAY:
-            let cell: TodayCell = tableView.owa_dequeueReusableCell(for: indexPath)
-            cell.configure(with: displayData)
+        guard let (itemType, itemData) = presenter.getForecastDisplayData(for: indexPath)
+            else {
+                fatalError("Can not retrieve displayData for indexPath: \(indexPath)")
+        }
+
+        switch itemType {
+        case .today:
+            let cell: TodayForecastListCell = tableView.owa_dequeueReusableCell(for: indexPath)
+            cell.configure(with: itemData)
             return cell
-        case (0, 1...), (1..., _):
-            // Regular cell
-            let cell: ForecastCell = tableView.owa_dequeueReusableCell(for: indexPath)
-            cell.configure(with: displayData)
+        case .regular:
+            let cell: RegularForecastListCell = tableView.owa_dequeueReusableCell(for: indexPath)
+            cell.configure(with: itemData)
             return cell
-        default:
-            fatalError("No Cell type for indexPath: \(indexPath)")
         }
     }
 }
@@ -134,9 +132,9 @@ private extension ListViewController {
         
         sourcesSegmentedControl.removeAllSegments()
         
-        guard !logic.datasourceTitles.isEmpty else { return }
+        guard !presenter.datasourceTitles.isEmpty else { return }
         
-        for (index, title) in logic.datasourceTitles.enumerated() {
+        for (index, title) in presenter.datasourceTitles.enumerated() {
             sourcesSegmentedControl.insertSegment(withTitle: title,
                                                   at: index,
                                                   animated: false)

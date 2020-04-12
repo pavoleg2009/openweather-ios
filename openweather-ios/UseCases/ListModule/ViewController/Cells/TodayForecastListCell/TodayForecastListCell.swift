@@ -1,5 +1,5 @@
 //
-//  TodayCell.swift
+//  TodayForecastListCell.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 31.03.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayCell: UITableViewCell, ReusableView {
+class TodayForecastListCell: UITableViewCell, ReusableView {
     
     // MARK: Outlets
     @IBOutlet private weak var descriptionLabel: UILabel!

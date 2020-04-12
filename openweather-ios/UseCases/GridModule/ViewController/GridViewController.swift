@@ -10,11 +10,9 @@ import UIKit
 
 final class GridViewController: UIViewController {
     
-    let space: CGFloat = 8
+    typealias Presenter = GridViewOutput & GridDataSource
     
-    typealias Logic = GridViewOutput & GridDataSource
-    
-    var logic: Logic!
+    var presenter: Presenter!
     
     // MARK: Outlets
     private lazy var sourcesSegmentedControl: UISegmentedControl = {
@@ -74,13 +72,13 @@ extension GridViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int
     ) -> Int {
-        logic.getItemsCount(for: section)
+        presenter.getItemsCount(for: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: WeatherCell = collectionView.owa_dequeueReusableCell(for: indexPath)
-        guard let gridItem = logic.getGridItem(for: indexPath) else {
+        guard let gridItem = presenter.getGridItem(for: indexPath) else {
             return UICollectionViewCell()
         }
         
@@ -94,26 +92,26 @@ extension GridViewController: UICollectionViewDataSource {
 extension GridViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = (collectionView.bounds.height / CGFloat(logic.rowCount)) - space
+        let height = (collectionView.bounds.height / CGFloat(presenter.rowCount)) - .defaultCellMargin
         return CGSize(width: height * .cellHeightToWidthRation, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        return space
+        return .defaultCellMargin
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
-        return space
+        return .defaultCellMargin
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        UIEdgeInsets(top: space / 2.0,
-                     left: space / 2.0,
-                     bottom: space / 2.0,
-                     right: space / 2.0)
+        UIEdgeInsets(top: .defaultCellMargin / 2.0,
+                     left: .defaultCellMargin / 2.0,
+                     bottom: .defaultCellMargin / 2.0,
+                     right: .defaultCellMargin / 2.0)
     }
 }
 
@@ -137,7 +135,7 @@ private extension GridViewController {
     
     @IBAction func sourceIndexDidChange(_ sender: Any
     ) {
-        logic.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
+        presenter.selectDataSource(index: sourcesSegmentedControl.selectedSegmentIndex)
     }
     
     func configureSegmentedControl() {
@@ -145,9 +143,9 @@ private extension GridViewController {
         self.navigationItem.titleView = sourcesSegmentedControl
         
         sourcesSegmentedControl.removeAllSegments()
-        guard !logic.datasourceTitles.isEmpty else { return }
+        guard !presenter.datasourceTitles.isEmpty else { return }
         
-        for (index, title) in logic.datasourceTitles.enumerated() {
+        for (index, title) in presenter.datasourceTitles.enumerated() {
             sourcesSegmentedControl.insertSegment(withTitle: title,
                                                   at: index,
                                                   animated: false)
@@ -166,4 +164,5 @@ private extension GridViewController {
 
 private extension CGFloat {
     static let cellHeightToWidthRation: CGFloat = 1
+    static let defaultCellMargin: CGFloat = 8
 }

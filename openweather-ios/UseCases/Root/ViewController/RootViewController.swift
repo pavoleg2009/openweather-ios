@@ -10,19 +10,19 @@ import UIKit
 
 final class RootViewController: UITabBarController {
     
-    typealias Logic = RootViewOutput & RootDataSource
+    typealias Presetner = RootViewOutput & RootDataSource
     
-    // MARK: Internal Properties
-    var logic: Logic!
+    // MARK: Internal Presetner
+    var presenter: Presetner!
 }
 
 // MARK: - RootViewInput
 extension RootViewController: RootViewInput {
     
     func configure() {
-        
+        loadViewIfNeeded()
         tabBar.tintColor = .owa_primaryBrandColor
-        logic.tabs
+        presenter.tabs
             .map { UITabBarItem(title: $0.title, image: $0.icon, selectedImage: nil) }
             .enumerated()
             .forEach { index, item in

@@ -1,5 +1,5 @@
 //
-//  GridLogic.swift
+//  GridPresenter.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 07.04.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class GridLogic {
+final class GridPresenter {
     
     weak var view: GridViewInput!
     
@@ -27,7 +27,7 @@ final class GridLogic {
 }
 
 // MARK: - Private Methods
-private extension GridLogic {
+private extension GridPresenter {
     
     func loadData(completion: VoidClosure?
     ) {
@@ -43,6 +43,7 @@ private extension GridLogic {
                 self.handle(error)
             }
         }
+        completion?()
     }
     
     func handle(successWith forecastResponse: ForecastResponse
@@ -52,7 +53,10 @@ private extension GridLogic {
             else { return }
     
         displayData = Forecast5DisplayDataBuilder().makeGridItems(from: forecasts)
-        view.update()
+        
+        DispatchQueue.main.async {
+            self.view.update()
+        }
     }
     
     func handle(_ error: ApiError
@@ -62,7 +66,7 @@ private extension GridLogic {
 }
 
 // MARK: - GridViewOutput
-extension GridLogic: GridViewOutput {
+extension GridPresenter: GridViewOutput {
     
     func activate() {
         view.configure()
@@ -74,7 +78,7 @@ extension GridLogic: GridViewOutput {
 }
 
 // MARK: - GridDataSource Methods
-extension GridLogic: GridDataSource {
+extension GridPresenter: GridDataSource {
     
     var datasourceTitles: [String] {
         forecastServiceAdapters.map { $0.title }

@@ -19,7 +19,7 @@ final class ForecastServiceJsonTests: XCTestCase {
         let expectedItemsCount = 40
         
         // WHEN
-        sut.getForecasts(city: "") { result in
+        sut.getForecasts { result in
             
             // THEN
             switch result {

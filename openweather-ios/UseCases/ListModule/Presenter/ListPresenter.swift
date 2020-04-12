@@ -1,5 +1,5 @@
 //
-//  ListLogic.swift
+//  ListPresenter.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 29.03.2020.
@@ -10,7 +10,12 @@ import Foundation
 
 typealias VoidClosure = () -> Void
 
-final class ListLogic {
+enum ForecastItemType {
+    case today
+    case regular
+}
+
+final class ListPresenter {
     
     weak var view: ListViewInput!
     
@@ -32,7 +37,7 @@ final class ListLogic {
 }
 
 // ListDataSource
-extension ListLogic: ListDataSource {
+extension ListPresenter: ListDataSource {
     
     var datasourceTitles: [String] {
         forecastServiceAdapters.map { $0.title }
@@ -43,7 +48,9 @@ extension ListLogic: ListDataSource {
         selectedForecastServiceIndex = index
         view.showActivityIndicator()
         loadData {
-            self.view.hideActivityIndicator()
+            DispatchQueue.main.async {
+                self.view.hideActivityIndicator()
+            }
         }
     }
     
@@ -68,30 +75,35 @@ extension ListLogic: ListDataSource {
     }
     
     func getForecastDisplayData(for indexPath: IndexPath
-    ) -> ForecastDisplayData? {
+    ) -> (type: ForecastItemType, data: ForecastDisplayData)? {
         guard indexPath.section < dayForecasts.count,
             indexPath.row < dayForecasts[indexPath.section].count
             else { return nil }
+        let item = dayForecasts[indexPath.section][indexPath.row]
         
-        return dayForecasts[indexPath.section][indexPath.row]
+        return (indexPath.section == 0 && indexPath.row == 0)
+            ? (type: .today, data: item)
+            : (type: .regular, data: item)
     }
 }
 
 // MARK: - ListViewOutput
-extension ListLogic: ListViewOutput {
+extension ListPresenter: ListViewOutput {
     
     func activate(
     ) {
         view.configure()
         view.showActivityIndicator()
         loadData {
-            self.view.hideActivityIndicator()
+            DispatchQueue.main.async {
+                self.view.hideActivityIndicator()
+            }
         }
     }
 }
 
 // MARK: - Private Methods
-private extension ListLogic {
+private extension ListPresenter {
     
     func loadData(completion: VoidClosure?
     ) {
@@ -107,6 +119,7 @@ private extension ListLogic {
                 self.handle(error)
             }
         }
+        completion?()
     }
     
     func handle(successWith forecastResponse: ForecastResponse
@@ -117,7 +130,9 @@ private extension ListLogic {
         
         dayForecasts = Forecast5DisplayDataBuilder().make(from: forecasts)
         cityName = forecastResponse.city?.name
-        view.update()
+        DispatchQueue.main.async {
+            self.view.update()
+        }
     }
     
     func handle(_ error: ApiError

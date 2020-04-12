@@ -14,3 +14,10 @@ protocol ForecastService {
                       completion: RequestCompletion<ForecastRequest.ResponseType>?
     )
 }
+
+extension ForecastService {
+    func getForecasts(completion: RequestCompletion<ForecastRequest.ResponseType>?
+    ) {
+        getForecasts(city: "", completion: completion)
+    }
+}

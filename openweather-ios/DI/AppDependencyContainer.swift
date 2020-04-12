@@ -15,14 +15,14 @@ public class AppDependencyContainer {
     func makeRootViewController() -> UITabBarController {
             
         let viewController = RootViewController()
-        let logic = RootLogic()
-        viewController.logic = logic
-        logic.view = viewController
+        let presenter = RootPresenter()
+        viewController.presenter = presenter
+        presenter.view = viewController
         viewController.viewControllers = [
             makeListNavViewController(),
             makeGridNavViewController()
         ]
-        logic.activate()
+        presenter.activate()
         return viewController
     }
 }
@@ -35,11 +35,11 @@ private extension AppDependencyContainer {
         
         let navigationController = UINavigationController()
         let viewController = makeListViewController()
-        let logic = makeListLogic()
+        let presenter = makeListPresenter()
         
-        viewController.logic = logic
-        logic.view = viewController
-        logic.activate()
+        viewController.presenter = presenter
+        presenter.view = viewController
+        presenter.activate()
         
         navigationController.viewControllers = [viewController]
         return navigationController
@@ -49,9 +49,9 @@ private extension AppDependencyContainer {
         return ListViewController(nibName: ListViewController.nibName, bundle: nil)
     }
     
-    func makeListLogic() -> ListLogic {
-        // TODO: Add dependency
-        return ListLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
+    func makeListPresenter() -> ListPresenter {
+        
+        return ListPresenter(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
     
     // Grid Module
@@ -59,11 +59,11 @@ private extension AppDependencyContainer {
         
         let navigationController = UINavigationController()
         let viewController = makeGridViewController()
-        let logic = makeGridLogic()
+        let presenter = makeGridPresenter()
 
-        viewController.logic = logic
-        logic.view = viewController
-        logic.activate()
+        viewController.presenter = presenter
+        presenter.view = viewController
+        presenter.activate()
         
         navigationController.viewControllers = [viewController]
         return navigationController
@@ -73,7 +73,7 @@ private extension AppDependencyContainer {
         return GridViewController(nibName: GridViewController.nibName, bundle: nil)
     }
     
-    func makeGridLogic() -> GridLogic {
-        return GridLogic(servicesBuilderType: ForecastServiceListBuilderDefault.self)
+    func makeGridPresenter() -> GridPresenter {
+        return GridPresenter(servicesBuilderType: ForecastServiceListBuilderDefault.self)
     }
 }

@@ -31,6 +31,6 @@ protocol ListDataSource: AnyObject {
     func getSectionsCount() -> Int
     func getItemsCount(for section: Int) -> Int
     func getHeaderTitle(for section: Int) -> String?
-    func getForecastDisplayData(for indexPath: IndexPath) -> ForecastDisplayData?
+    func getForecastDisplayData(for indexPath: IndexPath) -> (type: ForecastItemType, data: ForecastDisplayData)?
     
 }

@@ -1,5 +1,5 @@
 //
-//  RootLogic.swift
+//  RootPresenter.swift
 //  openweather-ios
 //
 //  Created by Oleg Pavlichenkov on 09.04.2020.
@@ -8,20 +8,20 @@
 
 import Foundation
 
-final class RootLogic {
+final class RootPresenter {
     
-    var view: RootViewInput!
+    weak var view: RootViewInput!
 }
 
 // MARK: RootDataSource
-extension RootLogic: RootDataSource {
+extension RootPresenter: RootDataSource {
     var tabs: [RootTab] {
         RootTab.allCases
     }
 }
 
 // MARK: RootViewOutput
-extension RootLogic: RootViewOutput {
+extension RootPresenter: RootViewOutput {
     func activate() {
         view.configure()
         view.selectTab(.grid)

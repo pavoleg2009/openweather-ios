@@ -23,7 +23,7 @@ final class ForecastServiceJson {
 // MARK: ForecastService
 extension ForecastServiceJson: ForecastService {
 
-    func getForecasts(city: String,
+    func getForecasts(city: String = "",
                       completion: RequestCompletion<ForecastRequest.ResponseType>?
     ) {
         do {
